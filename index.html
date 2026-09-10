@@ -1,0 +1,2555 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+
+<style>
+  html{color-scheme:light dark}
+  body{margin:0}
+  img{max-width:100%;height:auto}
+  [hidden]{display:none!important}
+</style>
+<title>开罗箱包入场简报</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="给中国皮包代工厂的埃及市场入场判断：落地成本计算器、四道准入门槛、三条产品线定位结论与现场问题清单。">
+<!-- 零外部依赖：不加载任何外部字体/脚本/样式，断网或墙内均可直接打开 -->
+
+<style>
+/* ============ tokens: light (bare :root = complete palette) ============ */
+:root{
+  --bg:#F3F5F4;
+  --surface:#FFFFFF;
+  --surface-2:#E8EDEB;
+  --surface-3:#DCE4E1;
+  --ink:#14201E;
+  --ink-2:#42524D;
+  --ink-3:#6C7C76;
+  --line:#D2DBD7;
+  --line-strong:#B4C1BC;
+  --accent:#00727B;
+  --accent-2:#00929D;
+  --accent-soft:#DFF0F1;
+  --good:#2C6B4E;
+  --good-soft:#DDECE3;
+  --warn:#8A6212;
+  --warn-soft:#F5EBD6;
+  --alert:#9E3223;
+  --alert-soft:#F6E3DF;
+
+  /* chart — validated light set: #00929D / #B03A2A / #B0801F (all PASS) */
+  --c-fac-1:#00929D; --c-fac-2:#58B7BE;
+  --c-tax-1:#B03A2A; --c-tax-2:#C86B57; --c-tax-3:#DE9E8C;
+  --c-chan-1:#B0801F; --c-chan-2:#CDA95C;
+  /* darker steps of the same hues, for small text that must clear 4.5:1 */
+  --c-fac-txt:#00666E; --c-tax-txt:#8B2B1E; --c-chan-txt:#77550F;
+
+  /* 地图标记 — 已验证浅色四色组：#00929D / #6B5DB8 / #B0801F / #B03A2A（全项 PASS） */
+  --m-mall:#00929D; --m-street:#6B5DB8; --m-whole:#B0801F; --m-indus:#B03A2A;
+  --m-mall-txt:#00666E; --m-street-txt:#544399; --m-whole-txt:#77550F; --m-indus-txt:#8B2B1E;
+  --map-bg:#EDF1F0; --map-urban:#DBE3E0; --map-water:#8FC0CF; --map-road:#C0CAC6;
+
+  --shadow:0 1px 2px rgba(20,32,30,.05), 0 8px 24px -12px rgba(20,32,30,.14);
+
+  /* 全部使用系统自带字体，不产生任何网络请求 */
+  --font-cjk:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC","WenQuanYi Micro Hei";
+  --font-display:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,var(--font-cjk),sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,var(--font-cjk),sans-serif;
+  --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono","Courier New",var(--font-cjk),monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1413;
+    --surface:#161E1C;
+    --surface-2:#1D2725;
+    --surface-3:#26312E;
+    --ink:#E6EDEA;
+    --ink-2:#A7B5B0;
+    --ink-3:#7B8A84;
+    --line:#2B3734;
+    --line-strong:#3D4B47;
+    --accent:#2FB0B8;
+    --accent-2:#00A3AC;
+    --accent-soft:#11302F;
+    --good:#5FAE83;
+    --good-soft:#152A20;
+    --warn:#D2A44C;
+    --warn-soft:#2B2415;
+    --alert:#E08074;
+    --alert-soft:#301B18;
+
+    /* chart — validated dark set: #00A3AC / #D95F72 / #B08A25 (WARN on the
+       ochre↔red deutan pair, ΔE 7.5 — mitigated by group brackets + 2px gaps) */
+    --c-fac-1:#00A3AC; --c-fac-2:#4FC3C9;
+    --c-tax-1:#D95F72; --c-tax-2:#E4838F; --c-tax-3:#EDA8AF;
+    --c-chan-1:#B08A25; --c-chan-2:#C9A94F;
+    --c-fac-txt:#4FC3C9; --c-tax-txt:#E4838F; --c-chan-txt:#CFAF52;
+  --m-mall:#00A3AC; --m-street:#8E7BD6; --m-whole:#B08A25; --m-indus:#D95F72;
+  --m-mall-txt:#4FC3C9; --m-street-txt:#A695E4; --m-whole-txt:#CFAF52; --m-indus-txt:#E4838F;
+  --map-bg:#121A19; --map-urban:#1E2725; --map-water:#2B586A; --map-road:#2E3B38;
+
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1413; --surface:#161E1C; --surface-2:#1D2725; --surface-3:#26312E;
+  --ink:#E6EDEA; --ink-2:#A7B5B0; --ink-3:#7B8A84;
+  --line:#2B3734; --line-strong:#3D4B47;
+  --accent:#2FB0B8; --accent-2:#00A3AC; --accent-soft:#11302F;
+  --good:#5FAE83; --good-soft:#152A20;
+  --warn:#D2A44C; --warn-soft:#2B2415;
+  --alert:#E08074; --alert-soft:#301B18;
+  --c-fac-1:#00A3AC; --c-fac-2:#4FC3C9;
+  --c-tax-1:#D95F72; --c-tax-2:#E4838F; --c-tax-3:#EDA8AF;
+  --c-chan-1:#B08A25; --c-chan-2:#C9A94F;
+  --c-fac-txt:#4FC3C9; --c-tax-txt:#E4838F; --c-chan-txt:#CFAF52;
+  --m-mall:#00A3AC; --m-street:#8E7BD6; --m-whole:#B08A25; --m-indus:#D95F72;
+  --m-mall-txt:#4FC3C9; --m-street-txt:#A695E4; --m-whole-txt:#CFAF52; --m-indus-txt:#E4838F;
+  --map-bg:#121A19; --map-urban:#1E2725; --map-water:#2B586A; --map-road:#2E3B38;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16.5px;
+  line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent-soft);color:var(--ink)}
+:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:2px}
+
+/* ============ shell ============ */
+.shell{max-width:1180px;margin:0 auto;padding:0 22px 96px}
+.grid{display:block}
+@media (min-width:1120px){
+  .grid{display:grid;grid-template-columns:minmax(0,1fr) 208px;gap:56px;align-items:start}
+}
+
+/* ============ masthead ============ */
+.mast{padding:52px 0 30px;border-bottom:2px solid var(--ink)}
+.eyebrow{
+  font-family:var(--font-display);font-weight:600;font-size:11px;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--accent);
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+}
+.eyebrow .dot{width:4px;height:4px;border-radius:50%;background:var(--line-strong);flex:none}
+h1{
+  font-family:var(--font-body);font-weight:700;
+  font-size:clamp(2.1rem,5.6vw,3.4rem);line-height:1.14;letter-spacing:-.01em;
+  margin:16px 0 0;text-wrap:balance;
+}
+.dek{
+  font-size:1.06rem;color:var(--ink-2);margin:14px 0 0;max-width:60ch;
+}
+.mast-meta{
+  display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:24px;
+  font-family:var(--font-mono);font-size:12px;color:var(--ink-3);
+}
+.mast-meta b{color:var(--ink-2);font-weight:600}
+
+/* ============ how-to-read strip ============ */
+.howto{
+  margin-top:28px;background:var(--surface);border:1px solid var(--line);
+  border-radius:3px;padding:20px 22px;box-shadow:var(--shadow);
+}
+.howto h2{
+  font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 12px;
+}
+.howto p{margin:0 0 14px;font-size:.94rem;color:var(--ink-2)}
+.keys{display:flex;flex-wrap:wrap;gap:8px}
+.key{
+  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;
+  padding:4px 11px 4px 8px;border-radius:100px;border:1px solid var(--line);
+  background:var(--bg);color:var(--ink-2);
+}
+.key i{font-style:normal;font-weight:700;font-family:var(--font-mono);font-size:11px}
+.key.k-ok{border-color:var(--good);background:var(--good-soft);color:var(--good)}
+.key.k-check{border-color:var(--warn);background:var(--warn-soft);color:var(--warn)}
+.key.k-risk{border-color:var(--alert);background:var(--alert-soft);color:var(--alert)}
+
+/* ============ TOC rail ============ */
+.toc{display:none}
+@media (min-width:1120px){
+  .toc{display:block;position:sticky;top:28px;padding-top:52px}
+  .toc h2{
+    font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-3);margin:0 0 12px;
+  }
+  .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+  .toc a{
+    display:flex;gap:9px;text-decoration:none;color:var(--ink-2);font-size:13.5px;
+    line-height:1.42;padding:5px 8px;border-radius:3px;border-left:2px solid transparent;
+  }
+  .toc a:hover{background:var(--surface-2);color:var(--ink)}
+  .toc a.on{border-left-color:var(--accent-2);color:var(--ink);background:var(--surface-2)}
+  .toc a span{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);flex:none;padding-top:1px}
+}
+
+/* ============ sections ============ */
+section{padding-top:60px;scroll-margin-top:24px}
+.sec-head{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--line-strong);padding-top:16px}
+.sec-num{
+  font-family:var(--font-body);font-size:12.5px;font-weight:700;color:var(--accent);
+  flex:none;padding-top:9px;letter-spacing:.08em;white-space:nowrap;
+}
+h2.sec-title{
+  font-family:var(--font-body);font-weight:700;font-size:clamp(1.5rem,3.4vw,2rem);
+  line-height:1.24;margin:0;letter-spacing:-.005em;text-wrap:balance;
+}
+.sec-sub{color:var(--ink-2);font-size:1rem;margin:10px 0 0;max-width:64ch}
+.prose{max-width:66ch}
+.prose p{margin:18px 0}
+.prose h3{
+  font-family:var(--font-body);font-weight:700;font-size:1.12rem;margin:34px 0 -4px;
+  letter-spacing:-.003em;
+}
+.prose ul,.prose ol{margin:16px 0;padding-left:1.15em}
+.prose li{margin:9px 0}
+.prose li::marker{color:var(--ink-3)}
+strong{font-weight:700;color:var(--ink)}
+em{font-style:normal;background:linear-gradient(transparent 62%,var(--accent-soft) 62%);padding:0 1px}
+code,.mono{font-family:var(--font-mono);font-size:.88em;letter-spacing:-.01em}
+.ar{font-family:var(--font-body);direction:rtl;unicode-bidi:isolate}
+
+/* ============ verdict list (executive summary) ============ */
+.verdicts{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.verdicts li{background:var(--surface);padding:18px 20px;display:grid;grid-template-columns:26px minmax(0,1fr);gap:16px}
+.verdicts .n{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--ink-3);padding-top:5px}
+.verdicts .t{font-weight:700;font-size:1.04rem;line-height:1.5;margin:0}
+.verdicts .d{margin:6px 0 0;font-size:.95rem;color:var(--ink-2);line-height:1.66}
+
+/* ============ callouts ============ */
+.note{
+  border-left:3px solid var(--line-strong);background:var(--surface);
+  padding:16px 20px;margin:26px 0;border-radius:0 3px 3px 0;max-width:66ch;
+}
+.note p{margin:0;font-size:.95rem;color:var(--ink-2);line-height:1.7}
+.note p + p{margin-top:10px}
+.note .lbl{
+  display:block;font-family:var(--font-display);font-size:10.5px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:7px;
+}
+.note.ok{border-left-color:var(--good);background:var(--good-soft)}
+.note.ok .lbl{color:var(--good)}
+.note.check{border-left-color:var(--warn);background:var(--warn-soft)}
+.note.check .lbl{color:var(--warn)}
+.note.risk{border-left-color:var(--alert);background:var(--alert-soft)}
+.note.risk .lbl{color:var(--alert)}
+.note.ok p,.note.check p,.note.risk p{color:var(--ink)}
+
+/* ============ calculator ============ */
+.tool{
+  margin:32px 0 0;background:var(--surface);border:1px solid var(--line-strong);
+  border-radius:4px;box-shadow:var(--shadow);overflow:hidden;
+}
+.tool-bar{
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+  padding:15px 20px;border-bottom:1px solid var(--line);background:var(--surface-2);
+}
+.tool-bar h3{
+  font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-2);margin:0;
+}
+.tool-body{padding:22px 20px 24px}
+.inputs{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
+  gap:14px 18px;margin-bottom:28px;
+}
+.field label{
+  display:block;font-size:12px;color:var(--ink-2);margin-bottom:5px;line-height:1.35;
+}
+.field label b{color:var(--ink);font-weight:700}
+.field .row{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:3px;background:var(--bg);overflow:hidden}
+.field input{
+  width:100%;border:0;background:transparent;color:var(--ink);
+  font-family:var(--font-mono);font-size:15px;font-weight:600;
+  padding:8px 10px;min-width:0;
+}
+.field input:focus{outline:none}
+.field .row:focus-within{border-color:var(--accent-2);box-shadow:0 0 0 3px var(--accent-soft)}
+.field .unit{
+  font-family:var(--font-mono);font-size:11px;color:var(--ink-3);
+  padding:0 10px 0 4px;flex:none;
+}
+.field.flagged label b{color:var(--warn)}
+.field.flagged .row{border-color:var(--warn)}
+
+/* results */
+.readout{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;
+  margin-bottom:30px;
+}
+.ro{background:var(--surface);padding:14px 16px}
+.ro .k{font-size:11.5px;color:var(--ink-3);letter-spacing:.02em}
+.ro .v{
+  font-family:var(--font-mono);font-variant-numeric:tabular-nums;
+  font-size:1.45rem;font-weight:600;margin-top:3px;line-height:1.2;
+}
+.ro .s{font-size:11.5px;color:var(--ink-3);font-family:var(--font-mono);margin-top:2px}
+.ro.hero{background:var(--accent-soft)}
+.ro.hero .k{color:var(--accent)}
+.ro.hero .v{color:var(--accent);font-size:1.9rem}
+
+/* stacked bars */
+.chart-title{
+  font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 4px;
+}
+.chart-note{font-size:12.5px;color:var(--ink-3);margin:0 0 20px}
+.barblock{margin-bottom:22px}
+.barblock .cap{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:7px;
+}
+.barblock .cap .who{font-weight:700;font-size:.97rem}
+.barblock .cap .who small{font-weight:400;color:var(--ink-3);font-size:12px;margin-left:7px}
+.barblock .cap .amt{
+  font-family:var(--font-mono);font-variant-numeric:tabular-nums;
+  font-size:.95rem;font-weight:600;color:var(--ink-2);
+}
+.bar{display:flex;gap:2px;height:34px;border-radius:2px;overflow:hidden;background:var(--surface-2)}
+.bar .seg{min-width:0;transition:width .35s cubic-bezier(.4,0,.2,1)}
+.seg-f1{background:var(--c-fac-1)} .seg-f2{background:var(--c-fac-2)}
+.seg-t1{background:var(--c-tax-1)} .seg-t2{background:var(--c-tax-2)} .seg-t3{background:var(--c-tax-3)}
+.seg-c1{background:var(--c-chan-1)} .seg-c2{background:var(--c-chan-2)}
+/* group brackets = direct labels for the three identities */
+.brackets{display:flex;gap:2px;margin-top:5px}
+.brk{min-width:0;transition:width .35s cubic-bezier(.4,0,.2,1);padding-top:5px;overflow:hidden}
+.brk span{
+  display:block;font-size:11px;font-family:var(--font-display);font-weight:600;
+  letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.brk.g-f{border-top:2px solid var(--c-fac-1)} .brk.g-f span{color:var(--c-fac-txt)}
+.brk.g-t{border-top:2px solid var(--c-tax-1)} .brk.g-t span{color:var(--c-tax-txt)}
+.brk.g-c{border-top:2px solid var(--c-chan-1)} .brk.g-c span{color:var(--c-chan-txt)}
+
+.swatchrow{display:flex;flex-wrap:wrap;gap:6px 16px;margin:22px 0 0}
+.sw{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-2)}
+.sw i{width:11px;height:11px;border-radius:2px;flex:none;display:block}
+
+/* value table */
+.tbl-wrap{overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:3px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:440px}
+th,td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--line)}
+thead th{
+  background:var(--surface-2);font-family:var(--font-display);font-size:10.5px;
+  font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);
+  white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr.total td{font-weight:700;background:var(--surface-2)}
+td .chip{display:inline-flex;align-items:center;gap:6px}
+td .chip i{width:9px;height:9px;border-radius:2px;flex:none;display:block}
+
+/* toggle */
+.seg-toggle{display:inline-flex;border:1px solid var(--line-strong);border-radius:3px;overflow:hidden;background:var(--bg)}
+.seg-toggle button{
+  font-family:var(--font-body);font-size:12.5px;font-weight:700;color:var(--ink-2);
+  background:transparent;border:0;padding:7px 15px;cursor:pointer;line-height:1.3;
+}
+.seg-toggle button + button{border-left:1px solid var(--line-strong)}
+.seg-toggle button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.btn-reset{
+  font-family:var(--font-body);font-size:12.5px;color:var(--ink-3);background:transparent;
+  border:1px solid var(--line-strong);border-radius:3px;padding:7px 13px;cursor:pointer;
+}
+.btn-reset:hover{color:var(--ink);border-color:var(--ink-3)}
+
+/* ============ gates / cards ============ */
+.gates{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;margin-top:28px;overflow:hidden}
+.gate{background:var(--surface);padding:22px}
+.gate-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+.gate-top .g-n{font-family:var(--font-mono);font-size:11px;color:var(--ink-3)}
+.gate-top h3{font-family:var(--font-body);font-weight:700;font-size:1.1rem;margin:0;flex:1 1 auto;min-width:180px}
+.pill{
+  font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;padding:3px 9px;border-radius:100px;white-space:nowrap;
+}
+.pill.p-ok{background:var(--good-soft);color:var(--good)}
+.pill.p-check{background:var(--warn-soft);color:var(--warn)}
+.pill.p-risk{background:var(--alert-soft);color:var(--alert)}
+.gate p{margin:0 0 12px;font-size:.95rem;color:var(--ink-2);line-height:1.7;max-width:70ch}
+.gate p:last-child{margin-bottom:0}
+.gate .cite{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-3);display:block;margin-top:10px}
+
+/* ============ three-line verdict ============ */
+.lines{display:grid;gap:16px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:760px){.lines{grid-template-columns:repeat(3,1fr)}}
+.line{
+  background:var(--surface);border:1px solid var(--line);border-radius:3px;
+  padding:20px;display:flex;flex-direction:column;gap:12px;
+}
+.line.hot{border-color:var(--accent-2);border-width:2px;box-shadow:var(--shadow)}
+.line-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.line-h h3{font-family:var(--font-body);font-weight:700;font-size:1.24rem;margin:0}
+.line .call{
+  font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.line.no .call{color:var(--alert)} .line.hot .call{color:var(--accent)} .line.later .call{color:var(--warn)}
+.line p{margin:0;font-size:.93rem;color:var(--ink-2);line-height:1.7}
+.line .why{border-top:1px solid var(--line);padding-top:12px;font-size:.88rem;color:var(--ink-3)}
+.line .why b{color:var(--ink-2)}
+
+/* ============ channel ladder ============ */
+.ladder{margin-top:28px;display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.rung{background:var(--surface);padding:18px 20px;display:grid;gap:4px 20px;grid-template-columns:1fr}
+@media(min-width:720px){.rung{grid-template-columns:170px minmax(0,1fr) 150px;align-items:baseline}}
+.rung .lvl{font-weight:700;font-size:.98rem}
+.rung .lvl small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-3);font-family:var(--font-mono);margin-top:2px}
+.rung .desc{font-size:.92rem;color:var(--ink-2);line-height:1.66}
+.rung .fit{font-size:11.5px;font-family:var(--font-display);font-weight:600;letter-spacing:.05em;color:var(--ink-3);text-transform:uppercase}
+.rung .fit.y{color:var(--accent)}
+
+/* ============ checklist ============ */
+.checklist{margin-top:26px;display:flex;flex-direction:column;gap:22px}
+.cl-group h3{
+  font-family:var(--font-body);font-weight:700;font-size:1.04rem;margin:0 0 4px;
+  display:flex;align-items:center;gap:10px;
+}
+.cl-group .who{font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:.03em}
+.cl-items{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.cl-items li{background:var(--surface)}
+.cl-items label{display:flex;gap:12px;padding:12px 16px;cursor:pointer;align-items:flex-start;font-size:.93rem;line-height:1.6;color:var(--ink-2)}
+.cl-items label:hover{background:var(--surface-2)}
+.cl-items input{margin:5px 0 0;flex:none;width:15px;height:15px;accent-color:var(--accent-2);cursor:pointer}
+.cl-items input:checked + span{color:var(--ink-3);text-decoration:line-through;text-decoration-color:var(--line-strong)}
+
+/* ============ takeaway box ============ */
+.takeaway{
+  margin-top:34px;border:2px solid var(--ink);border-radius:4px;background:var(--surface);
+  padding:24px 24px 26px;
+}
+.takeaway h3{
+  font-family:var(--font-body);font-weight:700;font-size:1.2rem;margin:0 0 4px;
+}
+.takeaway .sub{font-size:.92rem;color:var(--ink-3);margin:0 0 16px}
+.takeaway ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:9px}
+.takeaway li{font-size:.96rem;color:var(--ink-2);line-height:1.68}
+.takeaway li b{color:var(--ink)}
+
+/* ============ sources ============ */
+.src{margin-top:22px;font-size:13px;color:var(--ink-3);line-height:1.72}
+.src ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.src li{padding-left:1.05em;text-indent:-1.05em}
+.src a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+.src a:hover{border-bottom-color:var(--accent)}
+
+footer{
+  margin-top:70px;padding-top:22px;border-top:2px solid var(--ink);
+  font-family:var(--font-mono);font-size:11.5px;color:var(--ink-3);
+  display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;
+}
+
+/* ============ 商圈地图 ============ */
+.atlas{
+  margin-top:30px;background:var(--surface);border:1px solid var(--line-strong);
+  border-radius:4px;box-shadow:var(--shadow);overflow:hidden;
+}
+.atlas-bar{
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+  padding:14px 18px;border-bottom:1px solid var(--line);background:var(--surface-2);
+}
+.atlas-bar h3{
+  font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-2);margin:0;
+}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip-btn{
+  font-family:var(--font-body);font-size:12px;font-weight:700;cursor:pointer;
+  border:1px solid var(--line-strong);background:var(--bg);color:var(--ink-2);
+  border-radius:100px;padding:4px 12px 4px 9px;display:inline-flex;align-items:center;gap:6px;
+  line-height:1.5;
+}
+.chip-btn:hover{border-color:var(--ink-3);color:var(--ink)}
+.chip-btn[aria-pressed="false"]{opacity:.42}
+.chip-btn .mk{width:11px;height:11px;flex:none;display:block}
+.mk-mall{background:var(--m-mall);border-radius:50%}
+.mk-street{background:var(--m-street);transform:rotate(45deg);border-radius:1px}
+.mk-whole{background:var(--m-whole);border-radius:2px}
+.mk-indus{background:var(--m-indus);clip-path:polygon(50% 0,100% 100%,0 100%)}
+
+.mapbox{
+  position:relative;overflow:hidden;background:var(--map-bg);
+  width:100%;max-width:100%;aspect-ratio:1000/560;min-height:300px;
+  touch-action:none;cursor:grab;user-select:none;
+  border-bottom:1px solid var(--line);
+}
+.mapbox.dragging{cursor:grabbing}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.geo-water{fill:none;stroke:var(--map-water);stroke-linejoin:round;stroke-linecap:round}
+.geo-urban{fill:var(--map-urban);stroke:none}
+.geo-road{fill:none;stroke:var(--map-road);stroke-linejoin:round;stroke-linecap:round}
+
+.pins{position:absolute;inset:0;pointer-events:none}
+.pin{
+  position:absolute;transform:translate(-50%,-50%);pointer-events:auto;
+  background:none;border:0;padding:0;cursor:pointer;display:block;line-height:0;
+}
+.pin .dot{
+  width:13px;height:13px;display:block;box-shadow:0 0 0 2px var(--surface);
+  transition:width .12s,height .12s;
+}
+.pin.c-mall .dot{background:var(--m-mall);border-radius:50%}
+.pin.c-mall2 .dot{background:var(--surface);border:3px solid var(--m-mall);border-radius:50%}
+.pin.c-street .dot{background:var(--m-street);transform:rotate(45deg);border-radius:1px}
+.pin.c-whole .dot{background:var(--m-whole);border-radius:2px}
+.pin.c-indus .dot{background:var(--m-indus);clip-path:polygon(50% 0,100% 100%,0 100%);box-shadow:none}
+.pin .tag{
+  position:absolute;left:50%;top:14px;transform:translateX(-50%);
+  font-size:10.5px;font-weight:700;line-height:1.3;white-space:nowrap;
+  color:var(--ink);background:var(--surface);
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  padding:1px 5px;border-radius:2px;pointer-events:none;letter-spacing:.01em;
+}
+.pin.hide-tag .tag{display:none}
+.pin.dim{opacity:.18}
+.pin.on .dot{width:18px;height:18px;box-shadow:0 0 0 3px var(--accent-2)}
+.pin.on .tag{background:var(--ink);color:var(--bg)}
+.pin:focus-visible .dot{box-shadow:0 0 0 3px var(--accent-2)}
+
+.mapctl{position:absolute;right:10px;bottom:10px;display:flex;flex-direction:column;gap:4px}
+.mapctl button{
+  width:30px;height:30px;border:1px solid var(--line-strong);background:var(--surface);
+  color:var(--ink);font-size:15px;font-weight:700;cursor:pointer;border-radius:3px;
+  line-height:1;display:flex;align-items:center;justify-content:center;padding:0;
+}
+.mapctl button:hover{background:var(--surface-2)}
+.mapctl button.rst{font-size:10px;font-weight:700}
+.scalebar{
+  position:absolute;left:12px;bottom:12px;font-family:var(--font-mono);font-size:10px;
+  color:var(--ink-2);pointer-events:none;
+}
+.scalebar .rule{height:4px;border:1px solid var(--ink-2);border-top:0;margin-bottom:2px}
+.maphint{
+  position:absolute;left:12px;top:10px;font-size:10.5px;color:var(--ink-3);
+  pointer-events:none;background:var(--map-bg);
+  background:color-mix(in srgb, var(--map-bg) 82%, transparent);
+  padding:2px 7px;border-radius:2px;
+}
+
+/* 名录 */
+.dir{
+  display:grid;gap:14px;grid-template-columns:1fr;padding:18px;
+  background:var(--bg);border-top:1px solid var(--line);
+}
+@media (min-width:640px){ .dir{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (min-width:1000px){ .dir{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.dir-group{
+  border:1px solid var(--line);border-radius:3px;overflow:hidden;
+  align-self:start;background:var(--surface);
+}
+.dir-h{
+  background:var(--surface-2);
+  font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;padding:7px 14px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:8px;color:var(--ink-2);
+}
+.dir-h .mk{width:9px;height:9px;flex:none;display:block}
+.dir-item{
+  width:100%;text-align:left;background:var(--surface);border:0;border-bottom:1px solid var(--line);
+  padding:10px 14px;cursor:pointer;display:block;font-family:var(--font-body);
+}
+.dir-group .dir-item:last-child{border-bottom:0}
+.dir-group.hidden{display:none}
+.dir-item:hover{background:var(--surface-2)}
+.dir-item.on{background:var(--accent-soft)}
+.dir-item .nm{font-size:.93rem;font-weight:700;color:var(--ink);line-height:1.4}
+.dir-item .brief{font-size:12.5px;color:var(--ink-2);line-height:1.45;margin-top:2px}
+.dir-item .meta{
+  font-size:11.5px;color:var(--ink-3);margin-top:2px;display:flex;gap:10px;flex-wrap:wrap;
+  font-family:var(--font-mono);
+}
+.dir-item.hidden{display:none}
+
+/* 详情卡 */
+.place{padding:20px 20px 22px;border-top:1px solid var(--line-strong);background:var(--surface-2);min-height:112px}
+.place .ph{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:3px}
+.place h4{font-family:var(--font-body);font-weight:700;font-size:1.18rem;margin:0}
+.place .en{font-family:var(--font-mono);font-size:12px;color:var(--ink-3)}
+.place .tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 14px}
+.place .tg{
+  font-size:11px;font-family:var(--font-mono);padding:2px 8px;border-radius:100px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-2);
+}
+.place .tg.cat{font-weight:600}
+.place dl{margin:0;display:grid;gap:10px 16px;grid-template-columns:1fr}
+@media(min-width:620px){ .place dl{grid-template-columns:auto minmax(0,1fr)} }
+.place dt{
+  font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);padding-top:4px;white-space:nowrap;
+}
+.place dd{margin:0;font-size:.94rem;color:var(--ink-2);line-height:1.68}
+.place dd b{color:var(--ink)}
+
+/* 分区路线 */
+.routes{display:grid;gap:14px;margin-top:26px;grid-template-columns:1fr}
+@media(min-width:820px){ .routes{grid-template-columns:repeat(3,1fr)} }
+.route{
+  background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:18px;
+  cursor:pointer;text-align:left;font-family:var(--font-body);display:flex;
+  flex-direction:column;gap:9px;
+}
+.route:hover{border-color:var(--accent-2)}
+.route.on{border-color:var(--accent-2);border-width:2px;padding:17px;background:var(--accent-soft)}
+.route .rh{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.route h4{font-family:var(--font-body);font-weight:700;font-size:1.06rem;margin:0}
+.route .km{font-family:var(--font-mono);font-size:11px;color:var(--ink-3)}
+.route p{margin:0;font-size:.9rem;color:var(--ink-2);line-height:1.66}
+.route .stops{font-size:11.5px;color:var(--ink-3);font-family:var(--font-mono);line-height:1.6}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+/* ============ 手机端目录抽屉（<1120px 才显示） ============ */
+.mnav{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--surface);border-top:1px solid var(--line-strong);box-shadow:0 -8px 28px rgba(0,0,0,.10);padding-bottom:env(safe-area-inset-bottom)}
+.mnav summary{list-style:none;display:flex;align-items:center;gap:10px;padding:11px 18px;cursor:pointer;font-family:var(--font-display);font-size:14px;color:var(--ink);user-select:none;-webkit-tap-highlight-color:transparent}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary .cur{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-3)}
+.mnav summary .cur b{color:var(--ink);font-weight:600;margin-left:6px}
+.mnav summary .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--accent);border:1px solid var(--line-strong);border-radius:999px;padding:3px 11px;flex:none}
+.mnav[open] summary .tag{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.mnav ol{list-style:none;margin:0;padding:6px 10px 12px;border-top:1px solid var(--line);max-height:62vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.mnav ol a{display:flex;gap:8px;align-items:baseline;padding:9px 10px;border-radius:6px;color:var(--ink-2);text-decoration:none;font-size:14px;line-height:1.3}
+.mnav ol a span{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);flex:none}
+.mnav ol a.on{background:var(--surface-2);color:var(--ink)}
+@media (min-width:1120px){.mnav{display:none}}
+@media print{
+  .toc,.mnav,.tool-bar .seg-toggle,.btn-reset{display:none}
+  body{background:#fff;font-size:11pt}
+  section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="mast">
+    <div class="eyebrow">
+      <span>Egypt Market Brief</span><span class="dot"></span>
+      <span>Cairo · 2026</span><span class="dot"></span>
+      <span>Leather Goods / HS 4202</span>
+    </div>
+    <h1>开罗箱包入场简报</h1>
+    <p class="dek">给一家中国皮包代工厂的埃及市场判断：一个包从你的车间走到开罗货架，要过几道门、被谁拿走多少钱、你的低中高三条线各自还剩多少空间。</p>
+    <div class="mast-meta">
+      <span>资料核实日期 <b>2026-09-09</b></span>
+      <span>汇率参考 <b>1 USD ≈ 50–54 EGP</b></span>
+      <span>适用商品编码 <b>HS 4202</b></span>
+    </div>
+
+    <div class="howto">
+            <div class="keys">
+        <span class="key k-ok"><i>✓</i>已核实 · 有公开可查依据</span>
+        <span class="key k-check"><i>⚑</i>现场必核 · 只能由本地确认</span>
+        <span class="key k-risk"><i>!</i>风险点 · 会直接影响成败</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <main>
+
+      <!-- ===================== 摘要 ===================== -->
+      <section id="s0">
+        <div class="sec-head">
+          <div class="sec-num">摘要</div>
+          <div><h2 class="sec-title">九条结论</h2></div>
+        </div>
+
+
+        <ol class="verdicts">
+          <li><div class="n">01</div><div>
+            <p class="t">土耳其原产的包进埃及免关税；中国货要交，按示例约占货架价两成。</p>
+            <p class="d">埃土自贸协定下，埃及对土耳其原产工业品的关税已在 2020 年前降至零，享受优惠要有合规的原产地证明。同样的 FOB 和加价，中国货多交一道关税和它带出的增值税，按第一章示例约合货架价的 22%。这是成本结构上的差距；土耳其目前在埃及手袋申报进口中占比约 2%，货架上的竞争还看产品、款式、起订量、补货和渠道。</p>
+          </div></li>
+          <li><div class="n">02</div><div>
+            <p class="t">手袋和箱包（HS 4202.11–.29）要先在 GOEIC 完成工厂注册，才能商业清关。</p>
+            <p class="d">GOEIC 第 44/2019 号决定把子目 <span class="mono">4202.11 / .12 / .19</span>（箱、包、公文包）和 <span class="mono">4202.21 / .22 / .29</span>（手袋）纳入注册要求；钱包等小件（.31–.39）和其他（.91–.99）不在这份清单内。注册要有 ILAC 或 IAF 认可机构出具的质量体系证明，文件译成阿拉伯语并认证。代工出口时用的注册资格挂在谁名下、能否覆盖自有品牌，要先问清。</p>
+          </div></li>
+          <li><div class="n">03</div><div>
+            <p class="t">外汇已从 2022–23 年的全面短缺中恢复，价格压力仍在。</p>
+            <p class="d">2024 年埃镑转为浮动汇率，外储回升（2026 年 8 月末约 572 亿美元），强制信用证 2022 年底已取消。通胀降到 14–15% 一线（2026 年 7 月 14.9%），没有继续回落。对具体客户，仍要看它的银行付汇记录、账期和汇率承受力。</p>
+          </div></li>
+          <li><div class="n">04</div><div>
+            <p class="t">埃及本土有成规模的皮件制造，成品不交进口关税。</p>
+            <p class="d">IMC 2023 年统计：160 家制革厂、874 家皮革制品厂、976 家鞋厂（转引，非当前在产口径）。国家级的 Robbiki 皮革城已迁入 195 家制革厂，三期规划转向成品。本地厂在成品关税和交期上占优；具体到某一款包比不比得过，只能靠同规格报价和打样。</p>
+          </div></li>
+          <li><div class="n">05</div><div>
+            <p class="t">外资可以自己登记为埃及进口商，不必只靠本地代理。</p>
+            <p class="d">Law 173/2023 取消了埃及方 51% 的持股下限；Ministerial Decree 271/2026（<span class="mono">2026-07-22</span> 生效）明确外资持股至 100% 的公司可以登记，期限 10 年、经内阁批准可再延 10 年，最低实收资本 <span class="mono">200 万埃镑</span>。值不值得自建，取决于销量、人员和合规成本。</p>
+          </div></li>
+          <li><div class="n">06</div><div>
+            <p class="t">经销和代理在埃及法律上是两回事，签之前先弄清合同算哪一种。</p>
+            <p class="d">商业代理法 Law 120/1982 保护代理商；经销商（买断、转售）按合同和民商法处理。经销合同要写清买断关系、期限、通知期、独家与业绩挂钩、解约后的库存与商标处理；合同仍受诚信原则约束，违约解约照样可能赔偿。本地伙伴可以是特许商、代理商或经销商，取决于谁投入、谁担库存和推广。</p>
+          </div></li>
+          <li><div class="n">07</div><div>
+            <p class="t">商标要先注册：直接申请或马德里指定，业内估计全程 18–24 个月。</p>
+            <p class="d">埃及是马德里体系成员；直接向埃及申请须委托本地商标代理人，法定异议期为公告后 60 天。这个周期比多数商业决定都长，先定申请路径和类别。</p>
+          </div></li>
+          <li><div class="n">08</div><div>
+            <p class="t">三条线各有各的成立条件；先后取决于你的产品、售价和渠道。</p>
+            <p class="d">低线看同规格成本与补货效率——工厂数量和平均价都替代不了本地报价；中线看同用途、同价位上看得见的差异，以及扣除渠道费用后的贡献；高线看品牌信任与实际付费——寄售、预售或小批量先看有没有人真掏钱。哪条优先，取决于实际产品、目标售价和现有渠道，这里不替你排序。</p>
+          </div></li>
+          <li><div class="n">09</div><div>
+            <p class="t">消费者：价格压力仍在，促销带动客流；中国箱包品牌的认知还没有直接证据。</p>
+            <p class="d">PwC 2024 年埃及调查中 67% 的受访者把通胀列为首要担忧；JLL 记录 2026 年二季度促销活动改善了商场客流与交易，不能据此判断购买力已恢复。成熟品牌的折扣价是新品牌定价时必须比较的对象。中国品牌在汽车等品类已有销售表现（2025 年 1–7 月中国品牌乘用车在埃及销量居首）；接受中国制造、认识中国品牌、为一个新箱包品牌多付钱是三件事，后两件目前没有直接调查支持。</p>
+          </div></li>
+        </ol>
+      </section>
+
+      <!-- ===================== 第一章 钱 ===================== -->
+      <section id="s1">
+        <div class="sec-head">
+          <div class="sec-num">第一章</div>
+          <div>
+            <h2 class="sec-title">钱：一个包从你的车间到开罗货架</h2>
+            <p class="sec-sub">一只包从中国工厂到开罗货架，价格要翻几倍。三条线各自还剩多少空间，全在这条链里。</p>
+          </div>
+        </div>
+
+        <div class="prose">
+          <p>埃及按 <strong>CIF</strong>（货值＋保险＋运费）计税，没有起征点，从第一埃镑开始征。链条是这样叠的：</p>
+          <ol>
+            <li><strong>关税</strong>按 CIF × 税率</li>
+            <li><strong>发展费</strong>按 CIF 的约 1%–5%（不同商品档位不同）</li>
+            <li><strong>增值税 14%</strong>，计税基数是 <em>CIF ＋ 关税 ＋ 发展费</em>——注意，是在税上再征税</li>
+            <li>然后才轮到<strong>进口商加价</strong>和<strong>零售商加价</strong></li>
+          </ol>
+          <p>计算器的默认值只是示例。换成实际 FOB、谈下来的运费和清关行给的税率，看倍数。</p>
+        </div>
+
+        <div class="note check">
+          <span class="lbl">⚑ 现场必核 · 整条成本链里最要命的一格</span>
+          <p><strong>HS 4202 的确切税率，公开渠道查不到可靠数字。</strong>能查到的只有埃及进口关税的大区间：一般商品 5%–40%，服装类到 40%，个别消费品到 60%，奢侈类另有台面税。计算器里那个关税默认值只是<strong>示例</strong>，不是实际税率。</p>
+          <p>落地后要做的事：拿实际货品，让清关行按<strong>埃及完整税则编码</strong>报当月实际税率——手袋（4202.21 真皮 / 4202.22 PU 及纺织面）、行李箱、背包很可能<strong>不在同一档</strong>。一句话问法：「请按这几个税则编码，给我当月的关税率、发展费档位和 VAT 计税基数。」</p>
+        </div>
+
+        <!-- ============ CALCULATOR ============ -->
+        <div class="tool">
+          <div class="tool-bar">
+            <h3>落地成本计算器 · Landed Cost</h3>
+            <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+              <div class="seg-toggle" role="group" aria-label="选择关税情景">
+                <button type="button" id="mSplit" aria-pressed="true">中国 vs 土耳其</button>
+                <button type="button" id="mOne" aria-pressed="false">只看中国货</button>
+              </div>
+              <button type="button" class="btn-reset" id="reset">恢复示例值</button>
+            </div>
+          </div>
+
+          <div class="tool-body">
+            <div class="inputs">
+              <div class="field"><label for="fob"><b>FOB 离岸价</b> 含出口报关装船</label>
+                <div class="row"><input id="fob" type="number" min="0" step="0.1" value="5"><span class="unit">USD/只</span></div></div>
+              <div class="field"><label for="frt"><b>海运＋保险</b> 摊到每只</label>
+                <div class="row"><input id="frt" type="number" min="0" step="0.05" value="0.45"><span class="unit">USD/只</span></div></div>
+              <div class="field flagged"><label for="duty"><b>关税率</b> ⚑ 示例值，须现场核</label>
+                <div class="row"><input id="duty" type="number" min="0" max="100" step="1" value="30"><span class="unit">%</span></div></div>
+              <div class="field"><label for="dev"><b>发展费</b> 按 CIF</label>
+                <div class="row"><input id="dev" type="number" min="0" max="20" step="0.5" value="3"><span class="unit">%</span></div></div>
+              <div class="field"><label for="vat"><b>增值税</b></label>
+                <div class="row"><input id="vat" type="number" min="0" max="30" step="0.5" value="14"><span class="unit">%</span></div></div>
+              <div class="field"><label for="imp"><b>进口商加价</b></label>
+                <div class="row"><input id="imp" type="number" min="0" max="300" step="5" value="35"><span class="unit">%</span></div></div>
+              <div class="field"><label for="ret"><b>零售商加价</b></label>
+                <div class="row"><input id="ret" type="number" min="0" max="500" step="10" value="100"><span class="unit">%</span></div></div>
+              <div class="field"><label for="fx"><b>汇率</b> EGP/USD</label>
+                <div class="row"><input id="fx" type="number" min="1" step="0.5" value="51"><span class="unit">EGP</span></div></div>
+            </div>
+
+            <div class="readout">
+              <div class="ro"><div class="k">CIF 到岸</div><div class="v" id="oCif">—</div><div class="s" id="oCifE">—</div></div>
+              <div class="ro"><div class="k">完税成本（进口商）</div><div class="v" id="oLanded">—</div><div class="s" id="oLandedE">—</div></div>
+              <div class="ro"><div class="k">货架价</div><div class="v" id="oShelf">—</div><div class="s" id="oShelfE">—</div></div>
+              <div class="ro hero"><div class="k">货架价 ÷ FOB</div><div class="v" id="oMult">—</div><div class="s" id="oGap">—</div></div>
+            </div>
+
+            <p class="chart-title">示例价格的逐层形成</p>
+            <p class="chart-note">同一只包、同样的 FOB 和加价率，唯一的差别是关税身份。条形按货架价的构成比例绘制。<b>这是「其他条件相同时的关税差」演示，不是两国真实竞争成本对比。</b></p>
+
+            <div class="barblock" id="blkCN">
+              <div class="cap"><div class="who">中国出口 <small>MFN 关税</small></div><div class="amt" id="capCN">—</div></div>
+              <div class="bar" id="barCN"></div>
+              <div class="brackets" id="brkCN"></div>
+            </div>
+
+            <div class="barblock" id="blkTR">
+              <div class="cap"><div class="who">土耳其出口 <small>埃土 FTA · 关税 0%</small></div><div class="amt" id="capTR">—</div></div>
+              <div class="bar" id="barTR"></div>
+              <div class="brackets" id="brkTR"></div>
+            </div>
+
+            <div class="swatchrow">
+              <span class="sw"><i style="background:var(--c-fac-1)"></i>FOB 离岸</span>
+              <span class="sw"><i style="background:var(--c-fac-2)"></i>海运保险</span>
+              <span class="sw"><i style="background:var(--c-tax-1)"></i>关税</span>
+              <span class="sw"><i style="background:var(--c-tax-2)"></i>发展费</span>
+              <span class="sw"><i style="background:var(--c-tax-3)"></i>增值税</span>
+              <span class="sw"><i style="background:var(--c-chan-1)"></i>进口商加价</span>
+              <span class="sw"><i style="background:var(--c-chan-2)"></i>零售商加价</span>
+            </div>
+
+            <div class="tbl-wrap">
+              <table>
+                <thead><tr>
+                  <th>构成</th><th class="num">中国 USD</th><th class="num">占货架价</th><th class="num">土耳其 USD</th><th class="num">占货架价</th>
+                </tr></thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="note check">
+          <span class="lbl">⚑ 这个计算器算的是「价格情景」，不是「利润」</span>
+          <p>它只回答「货架价怎么被垒上去、各段占多少」，<strong>还差三样才能算经营账</strong>：</p>
+          <p><b>① 增值税不是纯成本。</b>合规登记的进口主体可以抵扣进项税——它造成的是<b>资金占用</b>，不能整笔当成本，也不能把含税加价全算成渠道拿走的钱。<br>
+          <b>② 缺一整块费用。</b>港杂、清关、内陆运输、仓储、退货折价、滞销减值、推广费，一样都没进这张表。<br>
+          <b>③ 现金占用要单列。</b>从订金→生产→海运→清关→压货→客户账期，钱躺在路上的时间可能比账面毛利更能决定生死。<b>要问的是：这单最多要压多少钱、压多久、最坏能承受多少损失。</b></p>
+        </div>
+
+        <div class="note risk">
+          <span class="lbl">! 同等条件下，关税差要多大的降价才能抵消</span>
+          <p>你在国内谈价是按分厘算的。从 FOB 到开罗货架，中间这一段把价格放大了好几倍，而<strong>放大的部分你一分钱都拿不到</strong>——一部分交给埃及政府，一部分留给渠道。</p>
+          <p>降 FOB 有没有用？<b>有，而且几乎是等比传导的</b>：按默认参数，FOB 降 5%，货架价降约 <span class="mono">4.6%</span>（传导率约 92%，差的那点是运费不随之下降）。<b>问题不在传导率，在差距的量级。</b></p>
+          <p>同样按默认参数，土耳其货的关税优势值 <span class="mono">$5.03</span>，约合货架价的 22.5%；要靠压价抹平这个差距，FOB 得从 $5.00 降到 $3.77，<strong>降幅 24.6%</strong>。这个幅度降不降得起，取决于你自己的成本结构。土耳其目前在埃及手袋申报进口中占比约 2%（见第三章），这里算的是同等条件下的成本差，不是当前的货架份额。</p>
+        </div>
+      </section>
+
+      <!-- ===================== 第二章 入场券 ===================== -->
+      <section id="s2">
+        <div class="sec-head">
+          <div class="sec-num">第二章</div>
+          <div>
+            <h2 class="sec-title">入场券：四道门，哪道真拦你</h2>
+            <p class="sec-sub">坊间说「出口埃及很难」，多数指的是别的品类。对箱包，真会拦住货的是两道：GOEIC 工厂注册和商标；另外两道一道是流程，一道是机会。</p>
+          </div>
+        </div>
+
+        <div class="gates">
+          <div class="gate">
+            <div class="gate-top">
+              <span class="g-n">门 01</span>
+              <h3>进口商资格 · 现在有了自建这条路</h3>
+              <span class="pill p-ok">✓ 已核实 · 利好</span>
+            </div>
+            <p>埃及货物进口必须由列入<strong>进口商登记册</strong>的实体办理。过去这道门要求埃及方持股至少 51%，等于外国品牌必须把进口环节交给本地人。这一条已经变了：Law 173/2023 取消了 51% 的持股下限，配套的新细则 <strong>Ministerial Decree 271/2026</strong> 自 <span class="mono">2026-07-22</span> 生效，明确<strong>外资持股 51% 以上乃至 100% 的公司可以登记为进口商</strong>，期限上限 10 年，经内阁决议可再延 10 年。</p>
+            <p>门槛：有限责任公司／合伙／一人公司最低<strong>实收资本 200 万埃镑</strong>；须与 GOEIC 系统电子联网，按季度和年度报送财务报表；主管机关须在材料齐备后 <span class="mono">15 天</span>内作出决定，逾期视为驳回。</p>
+            <p><strong>这对你意味着什么：</strong>你现在有了第三个选项——不必只在「找个埃及代理商」和「不做」之间二选一，可以自己设进口实体，把渠道握在手里。代价是资本金、合规报送和 10 年期限，值不值得取决于你打算做多大。</p>
+            <span class="cite">依据：Law 121/1982 · Law 173/2023 · Law 4/2026（2026-04-03 生效）· Ministerial Decree 271/2026（2026-07-22 生效）</span>
+          </div>
+
+          <div class="gate">
+            <div class="gate-top">
+              <span class="g-n">门 02</span>
+              <h3>ACID / Nafeza 预申报 · 流程硬性，但不难</h3>
+              <span class="pill p-ok">✓ 已核实</span>
+            </div>
+            <p>海运货物自 2021 年起、<strong>空运货物自 2026 年 1 月 1 日起</strong>，进埃及都必须在<strong>发运前</strong>完成预申报：由埃及进口商在 Nafeza 平台凭形式发票发起，取得 <strong>19 位 ACID 编号</strong>（一般要求最迟发运前 48 小时）。商业发票、装箱单、提单／空运单、原产地证<strong>都必须印上这个 ACID 号</strong>。</p>
+            <p><strong>境外出口商这一侧要自己操作 CargoX 平台</strong>：单证需在发运前通过它电子提交，与进口商那边的 Nafeza 对接上。<b>这是工厂要派人学会的系统，不是清关行替你干的活。</b></p>
+            <p><strong>典型翻车方式不是税，是文件。</strong>没有 ACID 号、或单证上的号与申报不一致，货就卡在口岸。这道门不构成战略障碍，但要求工厂和进口商之间的单证配合足够规范——<b>第一票货要留足时间；寄样品走空运同样绕不开。</b></p>
+          </div>
+
+          <div class="gate">
+            <div class="gate-top">
+              <span class="g-n">门 03</span>
+              <h3>GOEIC 工厂注册 · 手袋和箱包适用，先办</h3>
+              <span class="pill p-risk">! 硬门槛 · 不注册进不来</span>
+            </div>
+            <p>埃及对一批消费品要求<strong>境外生产工厂或品牌持有人事先在 GOEIC 注册</strong>，未注册的货不予商业清关放行。制度依据是 Decree 43/2016（修订 92/2015），44/2019 追加了商品清单，195/2022 修订了程序。</p>
+            <p><strong>44/2019 号决定把这些子目纳入注册要求：</strong><span class="mono">4202.11、4202.12、4202.19</span>（箱、包、公文包）和 <span class="mono">4202.21、4202.22、4202.29</span>（手袋）。钱包等随身小件（4202.31–.39）与其他（4202.91–.99）不在这份清单内。按实际产品的子目和材质对号。</p>
+            <p>注册的实质门槛是质量体系：工厂须持有由 ILAC 或 IAF 认可机构出具的质量管理体系证明，全部外文文件须译成阿拉伯语并经外交部认证；材料齐备后主管机关应在 15 天内作出决定。</p>
+            <div class="note risk" style="margin:14px 0 0">
+              <span class="lbl">! 代工时用的注册资格挂在谁名下</span>
+              <p><strong>现有代工出口用的是谁的注册资格？</strong>给品牌代工时，注册主体常挂在品牌方名下，那份资格<b>不覆盖自有品牌</b>；做自有品牌，很可能要以自己工厂的名义重新注册。官方说明是「材料齐备后 15 个工作日内作出决定」，资料准备、翻译认证和真实性核验另需时间，全流程要多久请清关行按当下情况估。商标没下来还能先卖；<b>这道注册没办妥，适用商品的商业清关会卡住。</b></p>
+            </div>
+          </div>
+
+          <div class="gate">
+            <div class="gate-top">
+              <span class="g-n">门 04</span>
+              <h3>商标 · 周期最长，先启动</h3>
+              <span class="pill p-risk">! 周期 18–24 个月</span>
+            </div>
+            <p>你要做的是<strong>自有品牌</strong>，不是代工。代工不需要商标，品牌需要。埃及是马德里体系成员。<strong>直接向埃及提交申请的外国申请人须委托本地商标代理人</strong>；若通过马德里体系指定埃及，提交环节走 WIPO，但当地驳回复审等程序仍需本地代理人。</p>
+            <p>时间是最大的问题：形式审查、实质审查、公告与异议期走完，<strong>业内一般估计 18–24 个月</strong>（<b>办理时长是经验估计，不是法定期限</b>）；<b>法定异议期为公告后 60 天</b>（知识产权法第 80 条）。官费坊间报价约每类 3,500–5,500 埃镑，另有代理费——<b>这个价和它包含哪些环节，得按现行收费标准问一遍</b>。</p>
+            <p>注册下来之后可以考虑<strong>向海关备案</strong>用于拦截仿冒（<b>具体怎么办、要什么文件，官方依据没查到，得现场问</b>）。刑事层面，仿冒注册商标可处 2 个月以上监禁及 5,000–20,000 埃镑罚金。</p>
+            <p><strong>商标的周期比多数商业决定都长，越早启动越好。</strong>先定申请路径（直接申请还是马德里指定）和类别；成本相对整件事很小。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 第三章 竞争 ===================== -->
+      <section id="s3">
+        <div class="sec-head">
+          <div class="sec-num">第三章</div>
+          <div>
+            <h2 class="sec-title">你在跟谁打</h2>
+            <p class="sec-sub">四股力量，各有各的优势来源。</p>
+          </div>
+        </div>
+
+        <div class="prose">
+          <h3>先纠正一个最容易犯的错：你要对标的是促销价，不是吊牌价</h3>
+          <p>埃及品牌零售<strong>促销很频繁</strong>，只看吊牌价会误判价格带。品牌埃及站的几个展示价（埃镑，2026 年 9 月）：</p>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>样本</th><th class="num">现价</th><th class="num">划线价</th><th>说明</th></tr></thead>
+              <tbody>
+                <tr><td>ALDO Ganeva 肩包</td><td class="num">2,400</td><td class="num">4,799</td><td>国际中端品牌，展示价打对折</td></tr>
+                <tr><td>Maje Python-effect 手袋</td><td class="num">8,375</td><td class="num">16,750</td><td>高价位同样在打折</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>把已核到的公开标价按价位排一遍，这个市场的梯子大致是这样（<b>均为网页展示价，非成交价；材质用途各异，不能直接横比</b>）：</p>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>价位（埃镑）</th><th>谁在这一档</th><th>这一档的性质</th></tr></thead>
+              <tbody>
+                <tr><td class="num">399 – 1,499</td><td>DeFacto、LC Waikiki 埃及站的女包（多为人造革）</td><td><b>连锁品牌已经占住的大众带</b>——低线要面对的不是无名小厂，是有品牌有门店网络的连锁</td></tr>
+                <tr><td class="num">249 – 2,499</td><td>LC Waikiki 背包／书包已核样本：抽绳袋 249；印花书包 799–1,499；学校书包 2,499（核价时售罄）</td><td>开学季的价格带，儿童款与大学生款要分开看</td></tr>
+                <tr><td class="num">1,599 – 2,299</td><td>Dejavu 肩包／手提包</td><td>中端现成选择已经存在</td></tr>
+                <tr><td class="num">2,400 – 5,039</td><td>ALDO 已核促销价：Ganeva 2,400（划线 4,799）、Fiteverything 3,149（划线 4,499）、Ashover 4,639（划线 5,799）、Maela 5,039（划线 6,299）</td><td><b>国际中端品牌打折后落到的位置</b>——通勤电脑包能到五千以上</td></tr>
+                <tr><td class="num">5,299 – 15,999</td><td>Mango 埃及站真皮包（镜饰肩包 8,499、抽绳包 9,999、编织包 11,999 等）</td><td>国际连锁的真皮档，落在本土设计师品牌之间</td></tr>
+                <tr><td class="num">4,600 – 10,450</td><td>开罗品牌 HammerAwl 真皮系列</td><td>本地设计＋真皮供给，已在 Garden 8、Walk of Cairo 等买手渠道铺货</td></tr>
+                <tr><td class="num">8,375</td><td>Maje 促销后展示价</td><td>高价位同样在打折</td></tr>
+                <tr><td class="num">14,500</td><td>本土品牌 Nuniz</td><td>本地高价皮具</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>从三四百到一万多埃镑，每一档都已经有人站着，而且不少是本地品牌。</strong>「真皮」「工厂直供」不构成空位——<b>要挤进去，得说清楚在哪一档、比那一档已有的谁强在哪。</b></p>
+          <p><b>这些是网页展示价，不是成交记录，也不是市场均价；两个商品材质容量不同，不能直接横比。</b>但足以说明一件事：<strong>你的新品牌要面对的是 2,400，不是 4,799。</strong>如果按吊牌价倒推定价，第一批货就会卡在货架上。</p>
+          <div class="note check">
+            <span class="lbl">⚑ 现场必做</span>
+            <p>走访时<strong>每个价格都记两个数：吊牌价和当天实际售价</strong>，并拍照留证。<b>低价段真正的主流成交区间，这里不给</b>——公开渠道查不出来，这个数只能在阿塔巴和街边商圈现场问出来。</p>
+          </div>
+
+          <h3>先看一组数：手袋这个类目，到底是谁在供货</h3>
+          <p>这是埃及 2024 年手袋进口的分子目实况（联合国 Comtrade，经世界银行 WITS 展示；<b>为申报进口额，不含本地生产，也不含非正规渠道</b>）：</p>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>子目</th><th class="num">进口总额</th><th>第一来源</th><th>第二来源</th><th>土耳其</th></tr></thead>
+              <tbody>
+                <tr><td><b>420221</b> 真皮／再生皮手袋</td><td class="num">230 万美元</td><td><b>意大利 65%</b></td><td>中国 26%</td><td>极小</td></tr>
+                <tr><td><b>420222</b> PU 及纺织面手袋</td><td class="num">498 万美元</td><td><b>中国 51%</b></td><td>越南 15%</td><td>0.7%（第 11）</td></tr>
+                <tr><td><b>420229</b> 其他手袋</td><td class="num">170 万美元</td><td>意大利 40%</td><td>中国 39%</td><td>10.4%</td></tr>
+                <tr class="total"><td>手袋进口合计</td><td class="num">约 900 万美元</td><td colspan="3">—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note risk">
+            <span class="lbl">! 申报进口盘子小；真皮进口以意大利为主；土耳其占比很低</span>
+            <p><strong>一、这组数只描述所列子目的申报进口额，一年不到 1000 万美元。</strong>它估算不了终端市场总量——本地生产和不经申报的货都不在里面。<b>所以只盯进口数据看竞争会低估真实对手</b>，批发渠道和本地厂要另看。</p>
+            <p><strong>二、材质不同，对手完全不同。</strong>PU 和纺织面这一段，中国占 51%，是主场；<b>但真皮手袋那一段第一名是意大利、占 65%，中国只有 26%</b>。如果高线走真皮，进口这一端的对手主要是意大利货和它带的品牌溢价；<b>进口数据里没有本土设计师品牌，零售端还要把它们算进去</b>。</p>
+            <p><strong>三、土耳其在这三个子目里合计只占约 2%。</strong>零关税是成本结构上的优势，目前没有体现在手袋的进口份额上。意大利和中国在申报进口里占比高；货架上的竞争还要加上品牌、本地生产和渠道，进口占比说明不了零售份额。</p>
+          </div>
+          <div class="note check">
+            <span class="lbl">⚑ 一个流传很广、但不能用的数字</span>
+            <p>常见说法是"埃及箱包进口均价约 1.5 美元／只"。<b>这个数不能用来判断手袋的竞争价位</b>——它出自把行李箱、手袋和<b>旅行盥洗／缝纫／擦鞋套装</b>混在一起的统计口径，而后者按件数占了该数据集的一半以上，均价是被这些小商品拉下去的。<br><strong>判断某一款包有没有竞争力，只能拿同材质、同用途、同尺寸的实际成交价去比，不能用任何一个大平均数。</strong></p>
+          </div>
+
+          <h3>一、土耳其货 —— 中高端那一段必须实价对标的对手</h3>
+          <p>埃土自贸协定 2005 年 12 月签署、2007 年 3 月生效；按议定书安排，<strong>埃及对土耳其原产工业品的关税已在 2020 年 1 月 1 日前分阶段降至零。</strong>这意味着在同一个货架上，土耳其包和中国包的成本差不是一点点手工费，而是一整道关税、加上这道关税所带出的增值税。</p>
+          <p>土耳其在这个品类上并不弱：审美更贴近中东市场，交期比中国短，中小单起订量灵活；目前在埃及手袋申报进口中占比约 2%。<strong>要盯的是它的成本结构，不是它现在的份额。</strong></p>
+          <div class="note check">
+            <span class="lbl">⚑ 落地要问的</span>
+            <p>找一个做进口的当地朋友，问他：「同样档次的包，土耳其货和中国货到你手上的成本差多少？你为什么选一个不选另一个？」——他的答案会告诉你，这道关税差在真实生意里到底值几个点。</p>
+          </div>
+
+          <h3>二、埃及本土制造 —— 低线绕不开的一堵墙</h3>
+          <p>产业规模（<b>IMC 2023 年的统计，且是转引的，不代表今天还在开工的数量</b>）：<strong>160 家制革厂、874 家皮革制品厂、976 家鞋厂。</strong>国家级项目 Robbiki 皮革城（<span class="ar">مدينة الروبيكي للجلود</span>）一期已迁入 195 家制革厂、约 150 家中小企业入驻，规划年产 1.5 亿平方英尺，<strong>三期的目标正是转向服装、鞋、配件这类成品</strong>——也就是你的品类。</p>
+          <p>他们的优势不在手艺，在结构：成品不交进口关税、交期以天计、能接小单翻单。（<b>注意别把这条夸大</b>：埃及皮革业本身面临原料与化工品进口成本高的问题，本地生产不等于不用外汇。）<b>但别把「874 家」直接读成「874 家和你同档同工艺的竞争对手」</b>——制革能力不等于成品包的设计、五金、缝制与稳定交付能力。<strong>你的低线到底比不比得过他们，只能靠同规格报价和打样比出来，不能靠数厂房数量下结论。</strong></p>
+
+          <h3>三、中国供货商 —— 大众批发渠道里的竞争</h3>
+          <p>阿塔巴市场（<span class="ar">سوق العتبة</span>，Attaba，始于 1869 年）连着穆斯基街，是开罗最大的批发集散地，被当地人形容成「一个由埃及人经营的小中国」。中国货在这里的存在形式是<strong>无品牌、拼价格、走量</strong>。</p>
+          <p><b>低线要不要做，在阿塔巴看半小时比读报告直接</b>——看到的是战场长什么样，不是结论。</p>
+
+          <h3>四、本土设计师品牌 —— 高线要正面回答的问题</h3>
+          <p>埃及已经跑出了自己的高端箱包品牌：<strong>Okhtein</strong>（2013 年由一对姐妹创立，以老开罗黄铜工艺为标志，门店覆盖开罗、迪拜、利雅得，并在大埃及博物馆内开设精品店，获多位国际名人加持）、<strong>Sabry Marouf</strong>（融合古埃及元素，获 Fashion Trust Arabia 奖项，作品被克利夫兰艺术博物馆收藏），以及 Palma 等。</p>
+          <p>更关键的是：<strong>本土设计师品牌已经是高价位竞争的一部分</strong>，高线不能只对标欧洲品牌。高端这一段的品牌价值来自设计、工艺、服务和身份表达的组合——一个新品牌要先回答「凭什么是你」，这个答案得自己给，不会因为品质更好就自动产生。</p>
+        </div>
+      </section>
+
+      <!-- ===================== 第四章 市场 ===================== -->
+      <section id="s4">
+        <div class="sec-head">
+          <div class="sec-num">第四章</div>
+          <div>
+            <h2 class="sec-title">客流怎么变、包为什么买、中国货怎么看</h2>
+            <p class="sec-sub">开罗零售要把商场人流、进店人数和实际购买分开看。前三节是判断，每条标了依据到哪一步；用现场看到的东西修正它。</p>
+          </div>
+        </div>
+
+        <div class="prose">
+          <h3>一、开罗开店，客流这几年是怎么变的</h3>
+          <p><strong>2022 到 2024 年的贬值和高通胀，明显挤压了家庭的非必需消费预算。</strong>埃镑从 15 块多跌到 50 上下，通胀在 2023 年一度过 35%。PwC 2024 年在埃及的调查里，<b>67% 的受访者把通胀列为首要担忧</b>（样本 320 人，看方向、不看精度）。商场里的人不一定变少——在开罗，逛商场是免费的家庭活动，天热时尤其如此——<b>但热闹和买单要分开看</b>：餐饮和娱乐带来的客流，不会等比例变成包类的销售。</p>
+          <p><strong>2024 年下半年以来，汇率不再暴跌，通胀降到 14–15% 一线</strong>（2026 年 7 月 14.9%）。JLL 2026 年二季度的开罗零售报告记录：当季新增约 4.27 万 m² 可租赁面积、总存量约 348 万 m²，<b>夏季促销和零售活动改善了商场客流与交易量</b>。这是当季表现改善的信号，不是购买力回到 2021 年的证据——<b>受访者仍把通胀列为首要担忧，价格压力没有解除</b>。</p>
+          <p><strong>商业空间在往东西两头扩张。</strong>新开罗和十月六日城的人口还在涨，新项目不断开出。具体哪家老场被分流了多少，取决于周边入住、交通、品牌组合和活动，没有连续客流数据，不能下结论。对一家包店来说，<b>商场定位之外，铺位可见性、经过的客群和相邻品牌同样影响进店和转化。</b></p>
+          <p><strong>促销价压低了新品牌的竞争参照。</strong>成熟品牌的展示价打折很常见（ALDO、Maje 在售的五折商品不止一款）。<b>同类竞品的促销价应进入定价比较，折后的单件贡献要单独核算。</b>消费者等促销的普遍程度，需要连续观察，这里不下断语。</p>
+          <p><strong>客流在时间上分布不均。</strong>周四周五晚、周末、斋月夜间、开斋节前和开学前是传统旺季，工作日白天冷清不代表这个场不行。各时段对箱包销售的实际贡献，要用门店交易记录看（交易笔数、客单、折扣），不能凭商场热闹程度判断。</p>
+
+          <h3>二、什么场景、买什么包</h3>
+          <p>埃及人买包，多数是<strong>为一个场景买</strong>。下面的款式和价位是选品判断；价位参照的是 2026 年 9 月各品牌埃及站的<b>展示价</b>，不是成交均价，也不是购买分布统计。</p>
+        </div>
+
+        <div class="tbl-wrap" style="margin-top:14px">
+          <table>
+            <thead><tr><th style="width:17%">场景</th><th>款式与购买理由</th><th style="width:34%">展示价参照（埃镑）</th></tr></thead>
+            <tbody>
+              <tr><td><b>年轻女性日常／大学</b></td><td>小斜挎、腋下包、轻便肩包；看搭配、轻便和价格</td><td>DeFacto 已核样本 399、499–599、1,499；LC Waikiki 人造革肩包 599–1,499（款型不同）</td></tr>
+              <tr><td><b>通勤（轻）</b></td><td>中型多隔层单肩／托特；装得下大屏手机、水瓶、文件</td><td>Dejavu 1,499–2,299</td></tr>
+              <tr><td><b>通勤（装电脑／正式）</b></td><td>大托特、电脑包、真皮商务包；容量、承重、正式感</td><td>ALDO Maela 电脑包 5,039（划线 6,299）；Ashover 手提 4,639（划线 5,799）；Softwoven 斜挎 4,549（划线 6,499）</td></tr>
+              <tr><td><b>上学（儿童）</b></td><td>双肩书包；图案、耐用；开学前是传统旺季</td><td>LC Waikiki 已核样本：抽绳袋 249；印花书包 799、899、1,099、1,299、1,499；学校书包 2,499（核价时售罄）</td></tr>
+              <tr><td><b>上学（大学生）</b></td><td>轻便背包、可装电脑的背包</td><td>LC Waikiki 已核样本：电脑背包 699、999、1,699</td></tr>
+              <tr><td><b>日常访友／聚会</b></td><td>中小手袋，搭配为主</td><td>数百到 2,500（DeFacto、Dejavu 区间）</td></tr>
+              <tr><td><b>婚宴／订婚宴</b></td><td>手拿包、链条包；五金和装饰效果</td><td>ALDO 链条包促销 3,149（原 4,499）；本土真皮品牌更高</td></tr>
+              <tr><td><b>送礼</b></td><td>礼盒装、品牌可见；开斋节、订婚、毕业</td><td>待核实</td></tr>
+              <tr><td><b>出行</b></td><td>旅行袋与拉杆箱要分开：袋看容量和重量，箱看尺寸和轮子</td><td>品牌箱有数千到过万的商品；单只／套装口径不同，待核实</td></tr>
+              <tr><td><b>男性</b></td><td>休闲小包（斜挎、胸包、腰包）与公文包是两档，不能合并</td><td>休闲小包数百到 1,500；真皮公文包另一档，本土品牌有万元级，待核实</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="prose">
+          <p style="margin-top:14px;font-size:.92rem;color:var(--ink-3)">开斋节、婚礼季、开学前是传统消费节点；各节点对箱包销售的实际贡献待核实，日历节点不自动等于销售高峰。</p>
+          <p style="margin-top:18px">几个跨场景的选款假设——都是假设，用现场和成交数据修正：</p>
+          <ul>
+            <li><strong>金色五金比银色常见</strong>，主流程度待核实。</li>
+            <li><strong>通勤场景实用压过极简</strong>：分隔多、口袋多、放得下大屏手机；这一条不外推到社交和婚宴。</li>
+            <li><strong>斜挎在年轻女性中多见</strong>——配长袍和头巾更方便，也更防抢；是不是在增长，要有时间比较才能说。</li>
+            <li><strong>真皮有认知，但价格敏感</strong>；且商品名里的「Leather」不等于真皮——Parfois 一款「Leather-effect」钱包主材就标为 PU，对标时看材质说明，不看标题。</li>
+            <li><strong>黑、棕、米、酒红是选款起点</strong>；亮色多见于节日和婚礼场景。</li>
+          </ul>
+
+          <h3>三、埃及人怎么看中国货</h3>
+          <p><strong>「中国货等于便宜、无牌」的印象，来自大众批发渠道里的低价商品。</strong>低价商品不能代表全部中国制造——不同品牌、渠道和品类的质量与价格差别很大。</p>
+          <p><strong>这几年在变，变的是有品牌的品类。</strong>埃及国家银行的行业资料：<b>2025 年 1–7 月，中国品牌乘用车在埃及销量 2.55 万辆，居各来源国首位，同比增长 93.8%</b>；日系 1.79 万辆第二。手机上 OPPO、小米、realme 是主流品牌。这些证明中国品牌可以进入埃及消费者的主流选择。</p>
+          <p><strong>但要拆成三层看：</strong>接受「中国制造」、认识某个「中国品牌」、愿意为一个新的中国箱包品牌多付钱——是三件不同的事。汽车销量证明中国品牌在该品类取得了销售表现；消费者是否因为它是中国品牌而购买或加分，这组数据回答不了，更不会自动转到箱包上。而且品牌国别不等于制造来源：土耳其品牌的包也可能是中国制造。</p>
+          <p><strong>箱包这个品类，货架上成规模的中端品牌多是土耳其系、本土和国际品牌，有品牌的中国箱包少见</strong>——这是观察，没有做过货架盘点，待核实。消费者对「中国品牌包」这个类别有没有认知，同样待核实。</p>
+          <p><strong>2023 年以来对部分西方品牌的抵制让本土品牌受益。</strong>它对中国箱包品牌购买意愿的影响，现有资料不足以判断。</p>
+          <div class="note ok">
+            <span class="lbl">✓ 一句话的判断</span>
+            <p><strong>中国制造在埃及不是一个统一的低价标签，不同品类和品牌差别很大。</strong>对一个新箱包品牌，产地之外更关键的是同价位的款式、做工、购买便利和售后；其他中国品牌的成功提供了认知基础，<b>能不能变成箱包的溢价，要靠这个品牌自己证明</b>。PwC 埃及调查里，超过两成受访者愿意因产品、评价和口碑尝试新品牌——说明有人愿意试，但不能据此估算箱包新品的市场规模或溢价。</p>
+          </div>
+        </div>
+
+        <div class="prose">
+          <h3>四、几个宏观数字：盘子很大，单价很低</h3>
+          <p>境内人口约 <strong>1.09 亿</strong>（CAPMAS，2026-05-09），年龄结构以年轻人口为主（常被引用的「63% 在 30 岁以下」<b>这个说法找不到对应年份的官方人口表，先存疑</b>）；零售总盘子常被引用为 2025 年超 <strong>2,540 亿美元</strong>（<b>这是商业机构的估算，包含哪些品类、算不算路边摊、按什么汇率折的都不清楚——看个量级就行，别当准数</b>）。但要紧的是另一组数字：私营部门最低工资自 2025 年 3 月起为<strong>每月 7,000 埃镑</strong>（约合 130–140 美元）；平均工资各口径差异极大，官方最后公布的月度平均总薪酬为 6,833 埃镑，其他估算在全国 8,500 埃镑到正规私营部门 18,500 埃镑之间。</p>
+          <p><strong>换算一下：一个月薪 7,000–10,000 埃镑的埃及年轻人，会为一只包花多少钱？</strong>这个数字是大众线定价时绕不开的参照——三条线面对的人群未必相同。光看收入数字没用。走访时一定要调实际门店的成交记录来校准——<b>某个价位一个月真卖掉几只</b>，这才是最硬的证据。</p>
+          <p>还有一个容易被忽略的结构：有一个广为流传的说法是<strong>非正规零售约占埃及零售活动的 40%</strong>（<b>常被说成出自 IFC，但原始研究没找到，先别当准数用</b>）。也就是说，正规连锁看到的那个市场，只是真实市场的一部分。</p>
+
+          <h3>销售节奏被宗教历主导，不是被公历</h3>
+          <p>这是和中国市场最大的运营差异。全年最大的消费高峰是<strong>斋月，尤其是开斋节前的最后十天</strong>；其次是宰牲节、开学季。整个中东北非地区的斋月零售规模已到约 660 亿美元量级。</p>
+          <div class="note risk">
+            <span class="lbl">! 对工厂排产的直接影响</span>
+            <p>斋月按<strong>伊斯兰历</strong>走，每年比公历提前约 11 天——<strong>你不能按去年的公历日期排产。</strong>倒推：货要在斋月开始前上架 → 清关和铺货留时间 → 海运 → 生产。第一次做，整条链至少往前留三到四个月，且必须把 ACID 预申报的时间算进去。如果做的是节庆导向的款，错过开斋节这一波，下一个同级别档期要等很久。</p>
+          </div>
+
+          <h3>线上：盘子在长，但坑很深</h3>
+          <p>电商规模 2026 年约 <strong>114.9 亿美元</strong>（Mordor 估算，<b>这个数把 B2B 和数字服务都算进去了，不等于老百姓网购的钱，更不是箱包的盘子</b>）。<b>至于常见的平台份额说法（Amazon.eg 约 62%／Jumia 约 19%／Noon 约 8%）——分母是什么没人说得清，别拿它做决定。</b></p>
+          <p>但有一条对箱包特别关键：<strong>货到付款（COD）在埃及电商中占比很高</strong>，常见说法是订单的 60%–70%、开罗和亚历山大以外更高（<b>是哪一年、什么样本、按订单数还是按金额算，都不清楚</b>；换个统计口径数字完全不同，别混着用）。</p>
+          <div class="note risk">
+            <span class="lbl">! 卖出去之后的义务，法律上比你想的重</span>
+            <p>埃及消费者保护法（Law 181/2018）规定：消费者可在 <strong>14 天内无理由退货或换货</strong>（商品需保持原状并有收据），瑕疵或不符商品可在 <strong>30 天内</strong>要求全额退款或更换。</p>
+            <p>还有一条更该注意：该法要求<strong>耐用消费品的供应商，就制造缺陷提供不少于 2 年的保修</strong>，含检验、维修和原厂配件，异地维修还要承担运费。<b>箱包算不算「耐用消费品」，要在当地确认——答案决定了要不要在埃及建一套售后。</b></p>
+            <p>这不是空谈：本土品牌 <b>Okhtein 已经公开提供 12 个月保修并在埃及设维修服务</b>。<strong>竞争已经延伸到卖出去之后——你的品牌进来，消费者坏了拉链找谁？这个问题现在没有答案，就是渠道拒绝你的理由。</strong></p>
+          </div>
+
+          <div class="note check">
+            <span class="lbl">⚑ 现场必核 · 拒收率</span>
+            <p>COD 是货到付款；能不能开包验货取决于商家和承运商的约定（例如物流商 Bosta 提供「允许客户开包」的设置，具体以商家与承运商约定为准）。对「看图下单、到手觉得不一样」的箱包来说，拒收率直接决定线上这条路能不能走。公开数据查不到埃及箱包类目的实际拒收率——<strong>这个数字只能问本地电商卖家或物流商</strong>。问法：「你们做包，COD 的拒收率大概多少？退回来的货还能不能二次销售？」</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 第五章 渠道 ===================== -->
+      <section id="s5">
+        <div class="sec-head">
+          <div class="sec-num">第五章</div>
+          <div>
+            <h2 class="sec-title">渠道：五层结构、上架路径与商务条件</h2>
+            <p class="sec-sub">零售分五层；新品牌上架有四条路；进场有明码的商务条件；现场有自己的作息和节奏。</p>
+          </div>
+        </div>
+
+        <div class="ladder">
+          <div class="rung">
+            <div class="lvl">高端购物中心<small>Mall of Egypt · CFC · City Stars</small></div>
+            <div class="desc">国际品牌与本土高端品牌的主场。<strong>看价格天花板和陈列标准</strong>，也看 Okhtein 这类本土品牌把故事讲到了什么程度；进不进场取决于铺位、客群和租金。</div>
+            <div class="fit">看天花板</div>
+          </div>
+          <div class="rung">
+            <div class="lvl">中端连锁与本土品牌<small>mid-tier chains</small></div>
+            <div class="desc">你的中线真正的对标层。重点观察：价格带、款式更新频率、面料与五金水平、是本地生产还是进口。<strong>这一层的买手是你最该见的人。</strong></div>
+            <div class="fit y">主战场</div>
+          </div>
+          <div class="rung">
+            <div class="lvl">精品杂货连锁<small>MINISO 等生活方式渠道</small></div>
+            <div class="desc">你代工过的零售体系在这边的门店表现——<b>相关品类的动销可作特定渠道参照；是否涉及你供的货，要核对商品记录</b>。<strong>这是少数能看到真实动销数据的渠道之一</strong>（现有客户手上的进销存同样是真数据，而且更贴近你自己的货）。<br><b>但要守住边界：这套数据只能说明「在这个客群、这个价格体系、这些门店里发生了什么」，不能拿来推算埃及高端皮包市场，也不能直接把卖得最好的款推荐给工厂。</b>看的时候要按<b>可售天数</b>比效率，把「缺货」和「卖不动」分开。</div>
+            <div class="fit y">数据来源</div>
+          </div>
+          <div class="rung">
+            <div class="lvl">批发集散市场<small class="ar">سوق العتبة</small></div>
+            <div class="desc">阿塔巴／穆斯基。大众批发渠道，价格竞争最直接的地方。<strong>看这里的价格和货品结构，能知道低线在批发渠道会面对什么。</strong></div>
+            <div class="fit">看清底部</div>
+          </div>
+          <div class="rung">
+            <div class="lvl">线上<small>Amazon.eg · Noon · Jumia · IG/FB 小店</small></div>
+            <div class="desc">社交电商（Instagram / Facebook 小店）在埃及极其活跃，是新品牌前期固定成本最低的试水口。COD 拒收率是前置问题。</div>
+            <div class="fit">先试水</div>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-top:40px">
+          <h3>货架是怎么运作的：四条上架路径</h3>
+          <p>知道有哪五层还不够，得知道<strong>一个新品牌具体怎么上到那层货架上</strong>。埃及基本是这四条路，控制力和投入从低到高：</p>
+        </div>
+
+        <div class="tbl-wrap" style="margin-top:16px">
+          <table>
+            <thead><tr><th style="width:20%">路径</th><th>怎么运作</th><th style="width:26%">代价与要害</th></tr></thead>
+            <tbody>
+              <tr><td><b>① 卖给进口商／批发商</b></td><td>货一次性卖断，之后的事你不管</td><td>最省事，<b>但你看不到终端价、拿不到消费者反馈、品牌完全不受控</b>——这正是代工思维的延伸</td></tr>
+              <tr><td><b>② 找本地特许／代理伙伴</b></td><td>国际品牌进埃及的<b>主流路径</b>。埃及现有约 600 家特许企业，其中<b>零售占 49%</b>；本土品牌与国际品牌大致四六开</td><td><b>本地伙伴最值钱的不是资金，是商业地产关系</b>——中东的家族企业与商场业主绑定很深，好铺位往往只给他们。代价是渠道命脉在别人手里，且要处理独家条款（见第二章）</td></tr>
+              <tr><td><b>③ 自己设进口实体，自营或租铺</b></td><td>外资现在可 100% 持股做进口商（见第二章门 01），再自己租铺或谈专柜</td><td>控制力最强，<b>但要吃下资本金、合规报送、租约、人员和库存</b>。投入最重，通常在确认要长期做之后</td></tr>
+              <tr><td><b>④ 社媒小店起步</b></td><td>本土新品牌现在的通用打法：<b>先在 Instagram／TikTok 开店，跑通了再考虑实体</b>，避开租金和人力的前期压力</td><td>前期固定成本最低、反馈快，<b>但拍摄、客服、配送、COD 拒收和售后都得自己扛</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note check" style="margin-top:18px">
+          <span class="lbl">⚑ 一个正在变的机制，值得现场确认</span>
+          <p>埃及不少消费品零售商<strong>正在跳过批发商、自己直接进口</strong>，理由是不愿意再付批发环节的加价。<b>如果这个趋势在箱包类目也成立，那你要找的对象就不是批发商，而是有进口能力的零售连锁</b>——路径更短、终端信息也拿得到。值得当面问零售买手一句：「你们的包是自己进口，还是从批发商拿？」</p>
+        </div>
+
+        <div class="prose" style="margin-top:36px">
+          <h3>进一个商场铺位，要付什么</h3>
+          <p>商场租赁没有公开的标准价。公开渠道能查到的是<strong>结构</strong>，不是可靠的数字：</p>
+        </div>
+
+        <div class="tbl-wrap" style="margin-top:16px">
+          <table>
+            <thead><tr><th style="width:24%">条件</th><th>公开口径</th></tr></thead>
+            <tbody>
+              <tr><td><b>租期</b></td><td>通常 <b>3–7 年</b></td></tr>
+              <tr><td><b>租金结构</b></td><td>基础租金（保底）＋ 超过约定营业额后按流水抽成，公开口径抽成约 <b>8–12%</b>；年递增约 <b>5–7%</b>——就是国内说的「保底加扣点」</td></tr>
+              <tr><td><b>基础租金水平</b></td><td><b>公开来源的年租、月租口径自相矛盾</b>（同一页面既写 25–40 美元/m²/年，又写平均 30 美元/m²/月），这里不采用；<b>以商场实际报价为准</b></td></tr>
+              <tr><td><b>其他费用</b></td><td>服务费（保洁、安保、维护）、营销推广费、押金、装修期与免租期——每一项都要在报价里问清</td></tr>
+              <tr><td><b>主力店优惠</b></td><td>可谈装修补贴（公开口径最高达装修成本的 20%）与联合营销预算；<b>小店通常没有</b></td></tr>
+              <tr><td><b>铺位</b></td><td>业内观察：20–50 m²、面向停车场、有独立可视性的小铺回报较好——这是观察，不是规律</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note risk" style="margin-top:18px">
+          <span class="lbl">! 保底加抽成意味着什么</span>
+          <p><strong>商场跟你分享上行，下行全归你。</strong>「保底租金÷抽成率」算出来的只是两种租金相等时的营业额，不是保本线；一家店能不能立住，还要算毛利、人工、服务费和装修分摊。<b>没有拿到实际报价之前，任何租金数字都别拿去算账。</b></p>
+        </div>
+
+        <div class="prose" style="margin-top:36px">
+          <h3>现场是什么样：作息、客流与斋月</h3>
+          <ul>
+            <li><strong>街边店一般 10:00–22:00；大型商场多开到午夜，周四、周五延时。</strong>开罗节日城零售区周六至周三 10:00–23:00、周四周五及公众假日 10:00–24:00，餐饮娱乐区开到凌晨 1 点。</li>
+            <li><strong>埃及的周末是周五和周六。</strong>周五是主麻日，街边店和市场上午多关门；大型商场多按正常时间开门（节日城周五 10 点开）。周四晚上就进入周末气氛。</li>
+            <li><strong>逛商场是家庭活动。</strong>儿童娱乐区和家庭餐饮是客流发动机——包的成交常发生在「陪家人逛街」途中，不是专程来买包。陈列位置和价格标示要按这个场景设计。</li>
+            <li><strong>斋月改变作息：</strong>街边店和市场下午提早关、日落开斋后重开，夜里最热闹；<b>商场的斋月营业安排各家不同，待核实。</b></li>
+          </ul>
+          <div class="note check">
+            <span class="lbl">⚑ 白天的商场不代表真实客流</span>
+            <p><strong>判断一个商场的真实成色，周四或周五晚上看一次，比白天有用得多。</strong>反过来，周日到周四白天是买手和店长有空的时段。</p>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-top:36px">
+          <h3>往哪走：四个正在发生的变化</h3>
+          <ol>
+            <li><strong>现代零售供给在扩张。</strong>商场和社区商业不断新增，行业文章把「从市集到正规门店」称为这十年的主题——<b>它替代了多少传统零售，没有连续份额数据，不能当已证实的趋势</b>。<b>对你的意义：正规渠道的盘子在变大，但门槛（注册、发票、账期、退货责任）也跟着上来了。</b></li>
+            <li><strong>新行政首都与东郊正在形成新的零售重心。</strong>金融区、市中心商业带和综合体的铺位价格预计有 <b>10–15%</b> 的上行。<b>这是未来几年的增量，不是现在的存量</b>——去看可以，但别把它当第一轮试销的落点。</li>
+            <li><strong>即时零售的基础设施刚刚补上。</strong>2026 年 4 月，埃及启用了中东北非<b>最大的即时零售履约中心</b>（约 2.7 万 m²、日处理约 100 万件）。<b>目前主要服务快消和生鲜，但仓配能力一旦成熟，会外溢到其他品类</b>——值得盯，暂时别指望。</li>
+            <li><strong>本土品牌正在借社媒崛起。</strong>不用先扛租金和人力，先在社媒把货卖起来，跑通了再落地。<b>这既是你的对手，也是你的路径参考</b>——④ 号路径能走通，就是因为这条路本地已经被验证过很多次了。</li>
+          </ol>
+        </div>
+
+        <div class="prose" style="margin-top:38px">
+          <h3>它们在地图上的位置，决定了什么能一起看、什么必须分开</h3>
+          <p>大开罗的零售不是一个中心，是<strong>三个相隔很远的中心</strong>：西边的十月六日城／谢赫扎耶德、东边的新开罗、中间的老城区。最西的埃及购物中心到最东的罗比基皮革城，<strong>直线距离约 70 公里</strong>，加上开罗的交通，一天跑两头基本等于什么都没看成。</p>
+          <p>主要商场、街边商圈、批发市场和产业园的实际位置如下；点任一标记看详情，点动线卡片在图上高亮。</p>
+        </div>
+
+        <div class="atlas">
+          <div class="atlas-bar">
+            <h3>埃及商圈地图 · Retail Atlas</h3>
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+              <div class="seg-toggle" role="group" aria-label="切换取景范围">
+                <button type="button" id="vCairo" aria-pressed="true">大开罗</button>
+                <button type="button" id="vEgypt" aria-pressed="false">全埃及</button>
+              </div>
+              <div class="chips" id="chips"></div>
+            </div>
+          </div>
+
+          <div class="mapbox" id="mapbox">
+              <svg id="mapsvg" viewBox="0 0 1000 560" aria-label="大开罗主要商场、商圈、批发市场与产业园分布示意图">
+                <defs><clipPath id="mapclip"><rect x="0" y="0" width="1000" height="560"></rect></clipPath></defs>
+                <g clip-path="url(#mapclip)"><g id="geo"></g></g>
+              </svg>
+              <div class="pins" id="pins"></div>
+              <div class="maphint">拖动平移 · 滚轮缩放 · 点标记看详情</div>
+              <div class="scalebar"><div class="rule" id="scaleRule" style="width:80px"></div><span id="scaleTxt">10 km</span></div>
+              <div class="mapctl">
+                <button type="button" id="zIn" aria-label="放大">+</button>
+                <button type="button" id="zOut" aria-label="缩小">−</button>
+                <button type="button" id="zRst" class="rst" aria-label="复位">复位</button>
+            </div>
+          </div>
+
+          <div class="place" id="place"></div>
+          <div class="dir" id="dirList"></div>
+        </div>
+
+        <p class="chart-note" style="margin-top:12px">位置按经纬度投影绘制，用于判断方位与相对距离，<b>不作导航用途</b>。<b>坐标未逐点实地核验</b>，走访时若发现偏差以实地为准。街边商圈本身是一片区域，图上只能用一个代表点表示。距离为直线距离；道路里程和交通耗时与直线距离不同。</p>
+
+        <div class="prose" style="margin-top:34px">
+          <h3>按地理聚类，主要分三片</h3>
+        </div>
+
+        <div class="routes" id="routes"></div>
+
+        <div class="prose" style="margin-top:40px">
+          <h3>开罗以外：三种性质完全不同的市场</h3>
+          <p>把地图切到<strong>「全埃及」</strong>视图，会看到另外三块。它们不是开罗的缩小版，逻辑各不相同——如果你的客户覆盖全国，这三块必须分开判断。</p>
+
+          <h3 style="font-size:1.02rem;margin-top:26px">一、亚历山大 —— 唯一能用来做对照的第二城</h3>
+          <p>埃及第二大城市，有自己的港口、消费习惯和本地品牌体系。<strong>City Centre Alexandria</strong>（2003 年开业，Majid Al Futtaim，169 家店铺、可租赁面积约 6 万 m²，家乐福主力店约 1.48 万 m²）是全城最大的场；海滨的 <strong>San Stefano Grand Plaza</strong> 走高端，同一综合体里有四季酒店和游艇码头。</p>
+          <p><b>去这里的唯一目的是证伪：</b>在开罗看到的价格带、款式偏好、渠道结构，到了亚历山大还成不成立？<strong>如果两座城市的结论一致，你的判断才敢往全国推；如果不一致，说明埃及不能当一个市场看。</strong></p>
+
+          <h3 style="font-size:1.02rem;margin-top:26px">二、三角洲区域城市 —— 人口的大头在这里</h3>
+          <p>埃及一半以上的人口不住在开罗和亚历山大。<strong>Mall of Tanta</strong>（2019 年开业，逾 13.5 万 m²、140+ 店铺）被称为<b>埃及次级省份中第一个国际标准商场</b>；<strong>Mall of Mansoura</strong> 规划约 15.5 万 m²、开放式三广场布局（<b>当前营业与招商状态需现场确认</b>）。</p>
+          <p><b>这一层的意义：</b>正规现代零售正在从开罗往区域城市铺开。<strong>区域城市适不适合某条线，取决于当地渠道费用、客群匹配和同档竞争——这三样都要单独核；购买力比开罗低，本身不构成理由。</strong></p>
+
+          <h3 style="font-size:1.02rem;margin-top:26px">三、季节性与旅游市场 —— 别用常识判断</h3>
+          <p><strong>北海岸</strong>（Marassi 等）一年只旺三四个月，但聚集的是全埃及购买力最高的一批人，近年已成为奢侈品牌的季节性战场——进驻者包括 Azza Fahmy、<b>Okhtein</b>、Beymen、Zegna。</p>
+          <div class="note ok">
+            <span class="lbl">✓ 一个值得记住的数字</span>
+            <p>据 2026 年 8 月的行业报道，本土珠宝品牌 <strong>Azza Fahmy 的北海岸门店贡献了其全年零售收入的 10–15%</strong>。同一篇报道也指出：另一些品牌在那里<b>只能打平甚至亏损</b>，仍然坚持开店——理由是曝光和客户终身价值，<b>「缺席富人聚集的地方，本身就是一种信号」</b>。</p>
+            <p><strong>这对你的高线是个直接提示：</strong>季节性渠道不能只按当季销量算账，但也别指望它养活自己。<b>你的对手 Okhtein 已经在那儿了——去看它一个季节做多少、怎么做。</b></p>
+          </div>
+          <p><strong>红海旅游市场</strong>（赫尔格达 Senzo Mall 约 17 万 m²、含免税店与纪念品市集；沙姆沙伊赫 SOHO Square）是另一套逻辑：<b>买家是游客，买的是纪念品、应急品和行李箱</b>，不代表埃及人的日常选择。<strong>看这类渠道，要把常住居民、旅游从业者和游客的购买分开问</strong>，否则很容易把旺季的热闹当成市场需求。</p>
+        </div>
+
+        <div class="note check">
+          <span class="lbl">⚑ 开罗的路和一周的节奏</span>
+          <p>开罗东西向跨城一趟，早晚高峰要三四个小时——十月六日城和新开罗不是同一天能兼顾的距离。<strong>周五是主麻日</strong>，街边店和市场上午多关门，大型商场多按正常时间开（节日城周五 10 点开门）；真实客流在周五晚到周六；周日到周四白天，买手和店长才有空谈事。</p>
+        </div>
+      </section>
+
+      <!-- ===================== 第六章 三条线 ===================== -->
+      <section id="s6">
+        <div class="sec-head">
+          <div class="sec-num">第六章</div>
+          <div>
+            <h2 class="sec-title">低中高三条线：成立条件与验证方法</h2>
+            <p class="sec-sub">这是<strong>各条线的成立条件和验证方法</strong>，不是判决书，也不替你排先后。结构性事实能说明要警惕什么，<strong>拍板要靠报价单、样品和成交记录</strong>。</p>
+          </div>
+        </div>
+
+        <div class="lines">
+          <div class="line no">
+            <div class="line-h"><h3>低线</h3><span class="call">先算账，别先铺货</span></div>
+            <p>成品要交关税和海运，本地皮件厂两样都不用，大众批发渠道里已有大量同类中国货——这是结构性成本差。你在材料采购、规模效率、良品率和款式翻新上可能有优势；比不比得过，要靠本地同规格报价。</p>
+            <div class="why"><b>继续的条件：</b>拿到本地同规格报价并比对后仍有价差，渠道有利润，能补单、能回款。<br><b>暂停的条件：</b>只能靠长期赊账或亏本促销撑着。<br><b>现成线索：</b>你们已经有埃及客户在进货——<b>先查清那些货为什么卖得动、卖到哪一层去了。</b></div>
+          </div>
+          <div class="line hot">
+            <div class="line-h"><h3>中线</h3><span class="call">看差异</span></div>
+            <p>中线能不能成立，重点看<b>同用途、同价位的产品差异</b>，以及扣除渠道费用后的贡献——价格梯子已经说明每一档都有人，「中间是空的」不成立。</p>
+            <div class="why"><b>继续的条件：</b>找得到具体人群和场景，同类对比有明确优势，顾客愿付目标价，渠道愿意主推，扣掉费用还有贡献。<br><b>暂停的条件：</b>你的零售价已经贴近成熟品牌的<b>促销价</b>，却讲不出设计、功能、材质或服务上的差别。</div>
+          </div>
+          <div class="line later">
+            <div class="line-h"><h3>高线</h3><span class="call">先证明溢价，再投钱</span></div>
+            <p>高价位已经有欧洲品牌和 Okhtein、Sabry Marouf 这类本土设计师品牌，各自提供不同的品牌价值——设计、工艺、服务、身份表达。给大牌代工能证明制造能力，<b>不能证明消费者愿意为你的新牌子多付钱</b>。</p>
+            <div class="why"><b>先把「高」定义清楚：</b>是工厂内部质量分档高、当地零售价高、还是要做奢侈品牌？三件事完全不同。<br><b>验证方式：</b>精品店寄售、预约展示、小批量或预售，看有没有人真掏钱。<br><b>没有形成付款时，先分清是产品、价格、目标客群还是销售条件的问题，再决定改哪一项；别先备货开店。</b></div>
+          </div>
+
+          <div class="note check" style="grid-column:1/-1">
+            <span class="lbl">⚑ 一个品牌三档，还是三个品牌</span>
+            <p><strong>这三条线是「一个品牌下的三档」，还是「三个独立品牌」？</strong>同一个牌子跨几个价位，要说清价差来自什么；分成几个牌子，每个都要单独承担商标、推广和库存。<b>三条线的实际价差和品牌架构只有你自己清楚，但要在下单前定，不能边卖边想。</b></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 第七章 第三条路 ===================== -->
+      <section id="s7">
+        <div class="sec-head">
+          <div class="sec-num">第七章</div>
+          <div>
+            <h2 class="sec-title">第三条路：在埃及做，而不是卖过来</h2>
+            <p class="sec-sub">和「把货卖过来」并列的另一条路。对一家代工厂，它可能比卖包本身影响更大——值不值得走，看这笔账。</p>
+          </div>
+        </div>
+
+        <div class="prose">
+          <p>有一条事实贯穿全篇：<strong>成品从中国运过来，要交本地生产和零关税产地都不用交的那道税。</strong>那就换一个问法——如果货是在埃及做的呢？</p>
+
+          <h3>埃及的关税身份，是它真正值钱的地方</h3>
+          <p>埃及原产的工业品出口时享有一组协定待遇：</p>
+          <ul>
+            <li><strong>欧盟</strong>：欧盟—埃及联系国协定 2004 年生效，埃及工业品<strong>即时免关税</strong>进入欧盟市场，原产地规则适用泛欧地中海公约。</li>
+            <li><strong>阿拉伯国家（GAFTA）</strong>：符合原产地规则的货物免征关税，通行口径为出厂成本中<strong>增值 40%</strong>（<b>你的产品适不适用要单独确认</b>）。</li>
+            <li><strong>东南非（COMESA）</strong>：凭 COMESA 原产地证享优惠。<b>原产地资格有多条路径</b>（含「出厂成本增值不低于 35%」等），<b>不是统一的 45% 一条线</b>——按你的具体产品和工序对号入座。</li>
+            <li><strong>非洲大陆（AfCFTA）</strong>：埃及 2019 年 2 月批准、4 月交存批准书。</li>
+          </ul>
+          <p><strong>在埃及生产，产品有机会同时拿到埃及国内市场、欧盟、阿拉伯世界和非洲的低关税通道</strong>，这是在中国生产拿不到的。享受优惠的前提是符合各协定的原产地规则：简单组装、贴牌换标不会自动获得原产资格，要按具体产品和工序逐个核。</p>
+
+          <h3>中资已经在这么做了，而且规模不小</h3>
+          <p>中埃泰达苏伊士经贸合作区累计中方投资约 <strong>40 亿美元</strong>，园区内企业近 <strong>200 家</strong>、约 <strong>1 万个就业岗位</strong>，三期已启动并明确纳入纺织与化纤。纺织服装领域的具体案例包括：浙江嘉信（Jasan）集团 1.17 亿美元的纺织服装一体化项目、江苏国泰 1,000 万美元的成衣厂等。</p>
+          <p>成本侧的粗略对照：埃及私营部门最低工资约合每月 130–140 美元；中国服装工人月薪在 2022 年已普遍超过 800 美元。<strong>这个差距是这些项目成立的基础。</strong></p>
+
+          <h3>这条路对一家代工厂的意义</h3>
+          <p>你的本业是<strong>给全球品牌代工</strong>。全球品牌近年普遍在推「China+1」——要求供应商在中国以外具备产能，以分散关税与地缘风险。<b>你的客户有没有提出这个要求、要求到什么程度，只有你自己清楚</b>；如果有，埃及是一个值得算账的选项。</p>
+          <p>而埃及同时给了你三样东西：<strong>低于中国的人工、以制革为基础的本地皮革产业（成品配套待核实）、以及一组通往欧盟／非洲／阿拉伯的关税身份。</strong>这意味着在埃及设产能，不只是解决「怎么把自有品牌卖进埃及」，更是给你的代工主业多一个选项。<b>但前面说过：你的客户到底有没有这个诉求，只有你自己清楚——有，这条路的分量就完全不同；没有，它就只是一个备选。</b></p>
+          <div class="note ok">
+            <span class="lbl">✓ 实地看一家本地厂</span>
+            <p>实地看一家埃及本地的皮件或制革工厂。<strong>进一次车间就能看出本地水平、缺什么、成本大概在哪</strong>——这是工厂出身的人最容易读懂的场景。同时也在回答一个更实际的问题：<strong>如果不卖成品，卖五金、辅料、模具、设备，或者做技术合作与合资生产，是不是反而走得通？</strong>（原辅料税率通常低于成品，同样要让清关行按编码核。）</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 第八章 行动 ===================== -->
+      <section id="s8">
+        <div class="sec-head">
+          <div class="sec-num">第八章</div>
+          <div>
+            <h2 class="sec-title">现有客户、渠道合作与经营条件</h2>
+            <p class="sec-sub">从现有客户的动销、同款对标、进场条件，到试销的现金账和售后责任。</p>
+          </div>
+        </div>
+
+        <div class="prose">
+          <h3>现有客户：先看上一批货的动销</h3>
+          <p>手上已经有埃及客户在进货——<strong>这批现成的交易记录，比这里任何一个宏观数字都值钱</strong>——它是判断现有产品表现最直接的依据：</p>
+          <ul>
+            <li>上一批货<strong>卖掉了多少、压了多少</strong>？压着的是哪些款、为什么？</li>
+            <li>客户拿货价多少、<strong>最终卖给消费者多少</strong>？（只问进货价没用，要问终端成交价）</li>
+            <li>有没有<strong>补单</strong>？补的是哪几个款？</li>
+            <li>退货、折价处理的比例？<strong>回款是否准时</strong>？</li>
+          </ul>
+          <p><b>答完这四个问题，三条线哪条有戏就清楚一半了。</b>单一客户的数据未必代表其他渠道，要和独立样本交叉比较。</p>
+
+          <h3>三种直接取证方式</h3>
+          <ol>
+            <li><strong>四渠道价格采集。</strong>选同一类包（比如女式单肩包），在高端 mall、中端连锁、精品杂货渠道、阿塔巴、线上各拍照记价，回来拉一张对比表。<strong>一张表看懂埃及的价格链。</strong></li>
+            <li><strong>样品实测。</strong>把你带来的样品拿到真实门店，给店员和真实顾客看，只问三个问题：<em>你觉得这个包值多少钱？你会买吗？哪里不对？</em>顾客当面说不喜欢，比问卷直接得多。</li>
+            <li><strong>竞品拆样。</strong>在阿塔巴和 mall 各买三到五个对标价格带的包，回酒店拆开看用料、工艺、五金。<strong>拆样能判断材料和工艺；真实成本还取决于采购规模、效率和良品率。</strong></li>
+          </ol>
+        </div>
+
+        <div class="prose" style="margin-top:40px">
+          <h3>同款对标表</h3>
+          <p>价格梯子只能说明每一档都有人。<strong>要判断你的包能不能挤进某一档，只有一个办法：把同用途、同材质、相近尺寸的商品摆在一起比。</strong>价格曲线拿小钱包和大手提包拼出来是没有意义的。</p>
+          <p>每条产品线各做一张，<strong>每张至少凑齐 3 个本地对标品</strong>：</p>
+        </div>
+
+        <div class="tbl-wrap" style="margin-top:16px">
+          <table>
+            <thead><tr>
+              <th style="width:26%">比什么</th><th>你的样品</th><th>对标 A</th><th>对标 B</th><th>对标 C</th>
+            </tr></thead>
+            <tbody>
+              <tr><td><b>品牌与购买地</b></td><td>—</td><td colspan="3">写清是哪个场、哪家店</td></tr>
+              <tr><td><b>吊牌价 / 当天实际售价</b></td><td>—</td><td colspan="3"><b>两个价都要记，只记吊牌价会误判整个价格带</b></td></tr>
+              <tr><td><b>材质</b>（面料／里料／五金）</td><td>—</td><td colspan="3">真皮、PU 还是纺织——这决定了你在哪个海关子目、跟谁竞争</td></tr>
+              <tr><td><b>尺寸与容量</b></td><td>—</td><td colspan="3">装不装得下当地人日常要带的东西</td></tr>
+              <tr><td><b>空包重量</b></td><td>—</td><td colspan="3">热天里重包是硬伤</td></tr>
+              <tr><td><b>做工细节</b>（车线／封边／拉链）</td><td>—</td><td colspan="3">你最有发言权的一格</td></tr>
+              <tr><td><b>包装与吊牌</b></td><td>—</td><td colspan="3">送礼场景是否够用</td></tr>
+              <tr><td><b>保修与售后</b></td><td>—</td><td colspan="3"><b>本地品牌已经在提供保修（见第四章），这一格空着就是竞争劣势</b></td></tr>
+              <tr class="total"><td>结论</td><td colspan="4">你赢在哪一格？这个优势<b>值不值得顾客多付钱</b>？多付多少？</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note check" style="margin-top:18px">
+          <span class="lbl">⚑ 填不出来，就等于这条线还没证据</span>
+          <p>某条产品线的对标表最后一行答不上来——<strong>说明这条线目前还缺少支持其定位的比较证据</strong>，不管它在工厂内部分级里叫低线还是高线。<b>这比任何市场规模数字都更能决定该不该投钱。</b></p>
+        </div>
+
+        <div class="checklist" id="checklist">
+          <div class="cl-group">
+            <h3>问清关行 / 报关代理 <span class="who">最优先，其余判断都建立在这上面</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="c1"><span>按我们实际货品的<b>完整税则编码</b>，当月关税率各是多少？手袋、行李箱、背包分别在哪一档？</span></label></li>
+              <li><label><input type="checkbox" data-k="c2"><span>发展费对这些编码是哪一档？增值税的计税基数具体怎么算？</span></label></li>
+              <li><label><input type="checkbox" data-k="c3"><span><b>我们这几个子目（4202.11/.12/.19/.21/.22/.29）的 GOEIC 工厂注册怎么办？</b>周期、费用、需要哪些文件？（44/2019 已把它们纳入，这一条不是问要不要，是问怎么办）</span></label></li>
+              <li><label><input type="checkbox" data-k="c4"><span><b>我们给品牌代工时用的注册资格，挂在谁名下？能不能覆盖自有品牌？</b>如果不能，以我们工厂名义重新注册要多久？</span></label></li>
+              <li><label><input type="checkbox" data-k="c5"><span>皮革原料、五金、辅料、半成品的税率是多少？和成品差多少？</span></label></li>
+              <li><label><input type="checkbox" data-k="c6"><span>一个柜从到港到提货，正常需要多少天？最容易卡在哪一步？</span></label></li>
+            </ul>
+          </div>
+
+          <div class="cl-group">
+            <h3>问进口商 / 现有客户 <span class="who">他们已经在这条链上赚钱</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="i1"><span>同档次的包，<b>土耳其货和中国货</b>到你手上成本差多少？你为什么选一个不选另一个？</span></label></li>
+              <li><label><input type="checkbox" data-k="i2"><span>你给零售端的加价通常是多少？零售端再加多少？</span></label></li>
+              <li><label><input type="checkbox" data-k="i3"><span>现在换汇和付汇顺不顺？账期一般怎么谈？</span></label></li>
+              <li><label><input type="checkbox" data-k="i4"><span>如果我们做自有品牌，<b>会不会动到你现在的生意</b>？你有没有兴趣做这个品牌？</span></label></li>
+              <li><label><input type="checkbox" data-k="i5"><span>你觉得中国工厂最让你头疼的是什么？（听真话，这是你改进的方向）</span></label></li>
+            </ul>
+          </div>
+
+          <div class="cl-group">
+            <h3>问零售买手 <span class="who">中线定位的裁判</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="b1"><span>你们包类目<b>卖得最好的价格带</b>是哪一段？一年上几次新？</span></label></li>
+              <li><label><input type="checkbox" data-k="b2"><span>选款你最看重什么？颜色、五金、尺寸上有没有本地偏好或忌讳？</span></label></li>
+              <li><label><input type="checkbox" data-k="b3"><span>斋月／开学季的备货节奏是怎样的？什么时候下单？</span></label></li>
+              <li><label><input type="checkbox" data-k="b4"><span>（把样品拿出来）<b>这只包你会不会进？为什么？你会标多少钱？</b></span></label></li>
+            </ul>
+          </div>
+
+          <div class="cl-group">
+            <h3>问本地皮件工厂 <span class="who">第七章那条路能不能走，全看这一场</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="f1"><span>你们的产能、工人数量、月产多少只？工人工资什么水平？</span></label></li>
+              <li><label><input type="checkbox" data-k="f2"><span><b>五金、里料、模具、版型、设备从哪来？</b>哪些必须进口？（这里可能藏着你的第一笔生意）</span></label></li>
+              <li><label><input type="checkbox" data-k="f3"><span>你们做不了哪些工艺？最想升级的是什么？</span></label></li>
+              <li><label><input type="checkbox" data-k="f4"><span>有没有在做出口？出到哪些国家？用的是哪个协定的原产地证？</span></label></li>
+              <li><label><input type="checkbox" data-k="f5"><span>如果我们出版型和技术、你出产能，这种合作你怎么看？</span></label></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-top:42px">
+          <h3>该找的机构</h3>
+          <p><strong>埃及皮革行业有正式的官方组织，找本地工厂和配套，从这里入手比在市场里打听可靠得多。</strong></p>
+        </div>
+
+        <div class="gates" style="margin-top:20px">
+          <div class="gate">
+            <div class="gate-top">
+              <span class="g-n">机构 01</span>
+              <h3>埃及皮革出口委员会（LEC）</h3>
+              <span class="pill p-ok">✓ 优先联系</span>
+            </div>
+            <p><b>地址：</b>开罗纳斯尔城 Emtedad Ramses 街 财政部大楼（Ministry of Finance Tower, Emtedad Ramses St., Nasr City）<br>
+            <b>电话：</b><span class="mono">(+202) 23 420 909 / (+202) 23 420 915 / (+2) 010 1760052</span>　<b>网站：</b><span class="mono">lecegypt.org</span></p>
+            <p><strong>为什么它对你最有用：</strong>它维护着<strong>按行业分类的会员名录</strong>——制革厂、鞋类配件、成鞋、<b>皮革制品</b>、皮革服装。<b>你要找的本地箱包厂和配套供应商，名单在他们手里，不用靠在阿塔巴瞎问。</b>它同时做展会组织、贸易团、市场研究和投资机会对接。</p>
+            <p><b>怎么用：</b>先发邮件说明来意——中国皮包制造商，想了解本地产能、寻找配套或合作，请求安排会员对接。<b>官方机构牵的线，比中间人介绍靠谱得多。</b></p>
+          </div>
+          <div class="gate">
+            <div class="gate-top">
+              <span class="g-n">机构 02</span>
+              <h3>埃及皮革工业商会</h3>
+              <span class="pill p-ok">✓ 行业口径来源</span>
+            </div>
+            <p>1958 年依总统令第 453 号设立，是埃及皮革行业的法定商会，隶属埃及工业联合会体系。与 LEC 共同主办 Cairo Inter Leather 展会。</p>
+            <p><strong>找它主要解决两件事：</strong>①行业的官方口径数据（产能、企业数、出口）——比二手转引的统计可靠；②如果走到"在埃及设厂或合资"那一步，<b>它是绕不开的一站</b>。</p>
+          </div>
+          <div class="gate">
+            <div class="gate-top">
+              <span class="g-n">机构 03</span>
+              <h3>Cairo Inter Leather 展会</h3>
+              <span class="pill p-risk">! 时间点已定 · 12/04–12/06</span>
+            </div>
+            <p><b>时间：</b><span class="mono">2026 年 12 月 4–6 日</span>　<b>地点：</b>开罗国际会议中心（纳斯尔城）<br>
+            <b>主办：</b>Pyramids International Group（UFI 会员、ISO 认证），LEC 与皮革工业商会背书<br>
+            <b>报名：</b>官网 <span class="mono">cairointerleather.com</span> 可免费登记参观、下载展商名录</p>
+            <p><strong>三个用法，按投入从小到大：</strong>①<b>参观</b>——免费登记，集中接触部分参展企业和买家，覆盖以展商名录为准；②<b>带样品去谈</b>——不设展位，约买家在场内见面；③<b>设展位</b>——品牌展示和接触买家的渠道之一，成本与效果要和其他方式比较。</p>
+            <p><b>先下载展商名录</b>：那份名单本身就是一张埃及箱包产业地图，比任何市场报告都实在。</p>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-top:42px">
+          <h3>产品改样清单</h3>
+          <p><strong>包本身，是工厂唯一能立刻动手改的东西。</strong>带着具体问题去问买手、店员和顾客，比问「你觉得埃及市场怎么样」有用得多。</p>
+          <p><b>每一条都当成待验证的假设，不是结论。</b>现场问到答案就打勾，问不到就带回去继续问。</p>
+        </div>
+
+        <div class="checklist" id="productlist">
+          <div class="cl-group">
+            <h3>气候与运输 <span class="who">工厂最听得懂、也最容易吃亏的一块</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="p1"><span>开罗夏季长期 <b>40°C 以上、极干</b>。集装箱内温度会更高——<b>你的胶粘剂在这个温度下开胶吗？</b>拿样品问客户上一批有没有脱胶、起泡、变形</span></label></li>
+              <li><label><input type="checkbox" data-k="p2"><span>橱窗与街边店长期强日照：<b>PU 面料和印花会不会褪色、发脆？</b>问客户压了一年的库存现在是什么状态</span></label></li>
+              <li><label><input type="checkbox" data-k="p3"><span>干热 + 沙尘：<b>浅色面料的耐脏和可擦洗性</b>；毛面、绒面材质在这里是不是自找麻烦</span></label></li>
+              <li><label><input type="checkbox" data-k="p4"><span>沿海城市（亚历山大、红海）盐雾：<b>电镀五金多久开始生锈？</b>这一条决定你的五金要不要换供应商</span></label></li>
+              <li><label><input type="checkbox" data-k="p5"><span>海运周期长 + 港口滞留：<b>包装防潮防压怎么做</b>，到货合格率是多少</span></label></li>
+            </ul>
+          </div>
+
+          <div class="cl-group">
+            <h3>尺寸与使用场景 <span class="who">决定卖不卖得动的隐形因素</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="p6"><span>当地人日常出门包里装什么？<b>大屏手机、水瓶、防晒、头巾备用</b>——你的主力款装得下吗？拿实物当场试</span></label></li>
+              <li><label><input type="checkbox" data-k="p7"><span><b>肩带长度和挎法</b>：包头巾时斜挎、肩挎的走位和不包时不一样，肩带够不够长、能不能调</span></label></li>
+              <li><label><input type="checkbox" data-k="p8"><span>重量：空包多重？<b>热天里重包是硬伤</b></span></label></li>
+              <li><label><input type="checkbox" data-k="p9"><span>场景拆开问：<b>上班通勤 / 上学 / 走亲访友 / 婚礼场合 / 送礼</b>——哪个场景的量最大？送礼场景对包装的要求完全不同</span></label></li>
+              <li><label><input type="checkbox" data-k="p10"><span>男包、女包、学生书包、行李箱：<b>四条完全不同的产品逻辑</b>，别用一套调研结论套全部</span></label></li>
+            </ul>
+          </div>
+
+          <div class="cl-group">
+            <h3>做工与耐用 <span class="who">投诉和退货都出在这里</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="p11"><span><b>拉链</b>是最高频故障点：当地对拉链品牌有没有认知？坏了在哪修？</span></label></li>
+              <li><label><input type="checkbox" data-k="p12"><span>肩带与包身<b>连接处的承重</b>：本地装的东西可能比你设计时重</span></label></li>
+              <li><label><input type="checkbox" data-k="p13"><span>问客户和店员：<b>上一批货的退货／投诉集中在哪几个部位？</b>这是最便宜的改样情报</span></label></li>
+              <li><label><input type="checkbox" data-k="p14"><span>本地竞品拆开看：<b>他们在哪里省了、哪里没省</b>——省对地方的才是真对手</span></label></li>
+            </ul>
+          </div>
+
+          <div class="cl-group">
+            <h3>视觉与文化 <span class="who">这一块只能问本地人，不能靠猜</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="p15"><span><b>颜色</b>：哪些好卖、哪些压货？季节和节日会不会换色系？</span></label></li>
+              <li><label><input type="checkbox" data-k="p16"><span><b>图案与符号禁忌</b>：宗教相关图形、动物形象、文字元素——这一条要当面问清楚，出错代价很大</span></label></li>
+              <li><label><input type="checkbox" data-k="p17"><span><b>五金的亮度和金银色偏好</b>；logo 要大要小（本地趋势在从大 logo 转向叙事型品牌）</span></label></li>
+              <li><label><input type="checkbox" data-k="p18"><span>你的品牌名在<b>阿拉伯语里的发音和含义</b>有没有问题？找本地人念一遍</span></label></li>
+            </ul>
+          </div>
+
+          <div class="cl-group">
+            <h3>包装与合规 <span class="who">容易忘，但会卡货</span></h3>
+            <ul class="cl-items">
+              <li><label><input type="checkbox" data-k="p19"><span>吊牌、洗标、成分标识的<b>阿拉伯语要求</b>是什么？谁来写、谁来审？</span></label></li>
+              <li><label><input type="checkbox" data-k="p20"><span>原产地标识怎么标、标在哪</span></label></li>
+              <li><label><input type="checkbox" data-k="p21"><span><b>送礼场景的包装</b>：本地是否需要礼盒／纸袋？这块成本要不要算进去</span></label></li>
+              <li><label><input type="checkbox" data-k="p22"><span>零售端要不要<b>防盗扣</b>？商场有没有硬性要求</span></label></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-top:42px">
+          <h3>试销方案</h3>
+          <p>走访、问话、拆样，最后都落到这张表上。<strong>填不满，说明关键信息还没拿到。</strong></p>
+          <p>先算清楚<strong>最坏情况要压多少钱</strong>，试销规模要和现金投入、回款周期、可承受损失相匹配。</p>
+        </div>
+
+        <div class="tool">
+          <div class="tool-bar">
+            <h3>试销投入与保本测算 · Pilot Exposure</h3>
+            <button type="button" class="btn-reset" id="pReset">恢复示例值</button>
+          </div>
+          <div class="tool-body">
+            <div class="inputs">
+              <div class="field"><label for="pSku"><b>试销款数</b></label>
+                <div class="row"><input id="pSku" type="number" min="1" step="1" value="4"><span class="unit">款</span></div></div>
+              <div class="field"><label for="pQty"><b>每款件数</b></label>
+                <div class="row"><input id="pQty" type="number" min="1" step="10" value="150"><span class="unit">只</span></div></div>
+              <div class="field"><label for="pCost"><b>单件到岸成本</b> 含税费</label>
+                <div class="row"><input id="pCost" type="number" min="0" step="0.5" value="8.26"><span class="unit">USD</span></div></div>
+              <div class="field"><label for="pPrice"><b>目标批发出货价</b></label>
+                <div class="row"><input id="pPrice" type="number" min="0" step="0.5" value="11.16"><span class="unit">USD</span></div></div>
+              <div class="field"><label for="pFixed"><b>一次性投入</b> 打样/商标/注册/差旅</label>
+                <div class="row"><input id="pFixed" type="number" min="0" step="500" value="12000"><span class="unit">USD</span></div></div>
+              <div class="field"><label for="pDead"><b>滞销残值率</b> 卖不掉时能回收多少</label>
+                <div class="row"><input id="pDead" type="number" min="0" max="100" step="5" value="30"><span class="unit">%</span></div></div>
+            </div>
+
+            <div class="readout">
+              <div class="ro"><div class="k">试销总件数</div><div class="v" id="pUnits">—</div><div class="s" id="pStockNote">—</div></div>
+              <div class="ro hero"><div class="k">这轮要先掏出去的钱</div><div class="v" id="pOutlay">—</div><div class="s" id="pOutlayNote">—</div></div>
+              <div class="ro"><div class="k">最坏情况净损失</div><div class="v" id="pRisk">—</div><div class="s">全部滞销、且残值确实收得回来时</div></div>
+              <div class="ro"><div class="k">全部卖光的本轮结果</div><div class="v" id="pBest">—</div><div class="s" id="pBestNote">—</div></div>
+              <div class="ro"><div class="k">保本售罄率<span style="font-weight:400;color:var(--ink-3)"> · 仅这批货</span></div><div class="v" id="pBE">—</div><div class="s" id="pBENote">—</div></div>
+            </div>
+
+            <div class="note check" style="margin:0">
+              <span class="lbl">⚑ 亏得起，不等于值得做</span>
+              <p><strong>先想清楚这一轮要验证什么问题，再决定愿意为这个答案花多少钱。</strong>亏得起不等于值得做——如果这轮跑完还分不清是款式问题、价格问题还是渠道问题，那这笔钱就白花了。反过来，如果数字超出承受范围，把款数和件数往下调，<b>而不是靠"应该能卖掉"说服自己。</b></p>
+              <p><b>四个数各回答一个问题：</b>「先掏出去的钱」是这轮真正要准备的现金（残值是<b>之后可能收回</b>的，不能提前从预算里扣）；「最坏情况净损失」是全部滞销、且残值确实收得回来时的结果，<b>残值收不回来还会更多</b>；「保本售罄率」只算<b>这批货本身</b>；「全部卖光的本轮结果」告诉你即使一切顺利，这一轮是赚是赔。</p>
+              <p>按示例值，首批毛利覆盖不了一次性投入。商标、GOEIC 注册、打样、差旅是<b>入场资格和信息的成本</b>；是否接受，取决于后续订单和验证价值——<b>但它就是这么大一笔，要算进去。</b></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-top:34px">
+          <p>然后是这张表——每一格对应一个要有人负责的事项。</p>
+        </div>
+
+        <div class="tbl-wrap" style="margin-top:16px">
+          <table>
+            <thead><tr><th style="width:24%">要素</th><th style="width:34%">要写清楚什么</th><th>为什么这格不能空</th></tr></thead>
+            <tbody>
+              <tr><td><b>首批款式</b></td><td>具体几个款、款号、对应改样意见</td><td>写「主推中端」等于没写</td></tr>
+              <tr><td><b>数量与价格</b></td><td>每款件数、出货价、建议零售价</td><td>合作条件要写明建议售价、促销安排和各方权限</td></tr>
+              <tr><td><b>投放点</b></td><td>现有客户 / 中端连锁 / 社交小店，各几个点</td><td>只铺一种渠道，测不出差别</td></tr>
+              <tr><td><b>周期</b></td><td>一轮卖多久（建议避开斋月这类特殊档期，或明确就是打这一档）</td><td>没有周期就没有复盘时点</td></tr>
+              <tr><td><b>投入上限</b></td><td>愿意为这一轮答案付出的现金上限（对照上面「先掏出去的钱」）</td><td>先定预算，再定规模</td></tr>
+              <tr><td><b>成功的定义</b></td><td>售罄率 ___%、扣退货后单件贡献 ___、周转 ___ 天、回款 ___ 天、是否产生补单</td><td><b>不能等卖完再定标准</b></td></tr>
+              <tr><td><b>补货触发</b></td><td>达到什么条件立刻追单，追多少</td><td>缺货损失和积压损失都要进补货判断</td></tr>
+              <tr><td><b>停止条件</b></td><td>什么情况下这一轮就到此为止</td><td>没有停止条件就会一直加码</td></tr>
+              <tr><td><b>负责人</b></td><td>工厂这边谁盯、埃及这边谁对接、下次碰头日期</td><td>补货、回款、退换货、售后都要有明确责任方</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note risk">
+          <span class="lbl">! 从代工转品牌，最容易栽在这一步</span>
+          <p>代工是「客户下单、我按图生产、按约定交付」，责任范围由合同界定、到交货节点为止。做品牌不一样——<strong>货到了埃及之后的所有事都变成你的</strong>：谁写阿拉伯语的产品文案和社媒内容？谁管库存和补货？谁处理退货和售后？<strong>谁为卖不掉的那批货负责？</strong></p>
+          <p><b>工厂做品牌最常见的失败不是选错市场，是没人落地。</b>这几个问题要有明确的责任方——哪怕答案是「先全部交给某个客户代管」，那也是一个明确的答案。</p>
+          <p><strong>而且这不只是经营选择，还是法定义务。</strong>第四章提到，埃及消费者保护法给了消费者 14 天无理由退货、30 天瑕疵退换的权利，耐用消费品还有不少于 2 年的制造缺陷保修要求。<b>这些义务落在「供应商」身上——如果你自己做进口和品牌，那就是你。</b></p>
+          <p>所以签第一单之前，这三格要有答案：<br>
+          <b>① 退货谁收、退回来的货放在哪、能不能二次销售；② 瑕疵品谁判定、谁换、换货的库存从哪来；③ 消费者拉链坏了打谁的电话、修在哪里、运费谁付。</b><br>
+          <strong>本土品牌 Okhtein 已经把 12 个月保修和维修点做出来了。你答不上这三格，渠道就有充分理由不进你的货。</strong></p>
+        </div>
+
+        <div class="takeaway">
+          <h3>这些东西凑齐，判断才有依据</h3>
+          <ol>
+            <li>一张<b>你自己填过的落地成本表</b>——关税那一格填的是清关行给的真实数字，不是这里的示例值</li>
+            <li>一张<b>四渠道价格对比表</b>，附照片</li>
+            <li>一份<b>见过的人的名单</b>，每个人后面写一句你的判断：靠谱 / 观望 / 别碰</li>
+            <li><b>三到五个竞品实物</b>，以及你的拆解结论</li>
+            <li><b>试销方案表</b>——每格有具体数字或人名</li>
+            <li>一份<b>改样清单</b>：从产品那一页里问出答案的部分，标明哪些款要改什么</li>
+            <li>GOEIC 注册和商标这两件周期最长的事，<b>谁负责、什么时候启动</b></li>
+          </ol>
+          <p style="margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:.95rem;color:var(--ink-2);line-height:1.7">
+            <b>「暂时不做」也是一个成立的结论</b>——只要依据足够、避免了一笔错误投入，并且明确了下一步该验证什么。
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== 附录 ===================== -->
+      <section id="s9">
+        <div class="sec-head">
+          <div class="sec-num">附录</div>
+          <div>
+            <h2 class="sec-title">哪些数字必须到现场再确认</h2>
+          </div>
+        </div>
+
+        <div class="prose">
+          <p>以下结论基于 <strong>2026 年 9 月 9–10 日</strong>能公开查到的资料。埃及的税率、进口法规和外汇政策变得快，这几项没有给答案，只给了该怎么问——编一个数字比不给更害人：</p>
+          <ul>
+            <li><strong>HS 4202 的确切关税率</strong>——公开渠道只能查到 5%–40% 的大区间，计算器里的 30% 只是示例</li>
+            <li><strong>发展费对箱包的具体档位</strong></li>
+            <li><strong>GOEIC 注册的具体办理路径</strong>——箱包子目已由 44/2019 纳入（此为已核实事实），待核的是：适用主体是工厂还是品牌持有人、现有代工注册能否覆盖自有品牌、办理周期与费用</li>
+            <li><strong>竞品的真实成交价与折扣常态</strong>——这里只抓到了网页展示价，低价段的主流成交区间查不出来，没给</li>
+            <li><strong>手袋进口数据的完整口径</strong>——第三章那张表取自联合国 Comtrade（经 WITS 展示）的 2024 年申报值，<b>不含本地生产与非正规渠道</b>；实际市场规模要多大，得靠现场判断补</li>
+            <li><strong>地图上各点的坐标</strong>——按经纬度投影绘制，未逐点实地核验；开罗以外为城市级示意，不是精确门址</li>
+            <li><strong>箱包类目在埃及电商的 COD 拒收率</strong></li>
+            <li><strong>埃及本土皮件厂的实际报价与工艺水平</strong>——只能实地看</li>
+          </ul>
+          <p>还有两件事得让专业人士拍板，这里只指方向：<strong>进口实体的设立与合规</strong>（会计师／律师）、<strong>经销合同的条款设计与商标注册</strong>（埃及本地律师及商标代理人）。</p>
+        </div>
+
+        <div class="src">
+          <p><strong>主要资料来源</strong>（2026-09-09 至 09-10 核实）</p>
+          <ul>
+            <li>进口商登记：<a href="https://www.bakermckenzie.com/en/insight/publications/2026/07/egypt-temporary-importer-registration-for-foreign-companies">Baker McKenzie · Egypt: Temporary Importer Registration for Foreign Companies</a>；<a href="https://www.mondaq.com/international-trade-investment/1831636/new-executive-regulations-of-the-importers-registry-law-key-regulatory-developments">Mondaq · New Executive Regulations of the Importers' Registry Law</a></li>
+            <li>GOEIC 制度背景：<a href="https://www.exports-to-egypt.com/en/media/news/decree-43">Decree 43/2016 原始商品清单</a>（<b>注意：箱包不在这份原始清单里，是 44/2019 追加的——只查这一份会得出相反结论</b>）；<a href="https://www.goeic.gov.eg/en/pages/show/603">GOEIC 官方注册页</a></li>
+            <li>关税、增值税与 ACID：<a href="https://www.trade.gov/country-commercial-guides/egypt-import-tariffs">US ITA · Egypt Country Commercial Guide — Import Tariffs</a>；<a href="https://www.trade.gov/market-intelligence/egypts-new-customs-facilitation-system-nafeza">ITA · Egypt's Nafeza System</a></li>
+            <li>埃土自贸协定：<a href="https://www.trade.gov.tr/free-trade-agreements/egypt">土耳其贸易部 · Egypt FTA</a></li>
+            <li>贸易协定与原产地规则：<a href="https://trade.ec.europa.eu/access-to-markets/en/content/eu-egypt-association-agreement">EU–Egypt Association Agreement</a>；<a href="https://www.gafi.gov.eg/English/Sectors/Pages/Trade-Agreements.aspx">GAFI · Trade Agreements</a></li>
+            <li>商业代理与经销：<a href="https://www.lexology.com/library/detail.aspx?g=9a078fbd-1d36-4541-873d-f18b78a9bb11">Lexology · Agency vs. Distribution in Egypt</a></li>
+            <li>商标：<a href="https://ig-bs.com/articles/how-to-register-trademark-egypt">How to Register a Trademark in Egypt (2026)</a>；<a href="https://eg.andersen.com/trademark-infringement-in-egypt/">Andersen Egypt · Trademark Infringement</a></li>
+            <li>皮革产业与 Robbiki：<a href="https://www.zawya.com/en/economy/north-africa/economic-boost-egypts-leather-industry-on-the-move-nmy9w7gl">Zawya · Egypt's Leather Industry on the Move</a>；<a href="https://www.aplf.com/2022/10/08/robbiki-leather-city-part-of-egypt-vision-2030/">APLF · Robbiki Leather City</a></li>
+            <li>零售与电商：<a href="https://www.tawasolfranchising.com/news/egypt-retail-market-2026">Egypt Retail Market 2026</a>；<a href="https://www.mordorintelligence.com/industry-reports/egypt-ecommerce-market">Mordor · Egypt E-commerce Market</a></li>
+            <li>宏观与外汇：<a href="https://www.cbe.org.eg/en/news-publications/news/2026/08/10/12/24/cpi-press-release-july-2026">埃及央行 · 2026 年 7 月 CPI 公告</a>；<a href="https://www.cbe.org.eg/en/news-publications/news/2026/09/07/07/24/net-international-reserves-at-the-end-of-august-2026">埃及央行 · 8 月末净国际储备</a>；<a href="https://www.coface.com/news-economy-and-insights/egypt-no-relief-for-the-foreign-currency-squeeze">Coface · Egypt FX</a></li>
+            <li>手袋分子目进口数据：世界银行 WITS（联合国 Comtrade）<a href="https://wits.worldbank.org/trade/comtrade/en/country/EGY/year/2024/tradeflow/Imports/partner/ALL/product/420221">420221 真皮手袋</a>、<a href="https://wits.worldbank.org/trade/comtrade/en/country/EGY/year/2024/tradeflow/Imports/partner/ALL/product/420222">420222 PU／纺织手袋</a>、<a href="https://wits.worldbank.org/trade/comtrade/en/country/EGY/year/2024/tradeflow/Imports/partner/ALL/product/420229">420229 其他手袋</a></li>
+            <li>GOEIC 注册商品清单（含箱包子目）：<a href="https://www.goeic.gov.eg/upload/online/2019/03/documents/files/en/1483.pdf">44/2019 号决定原文</a>；<a href="https://www.goeic.gov.eg/upload/online/2024/08/documents/files/en/1680.PDF">GOEIC 注册办理说明</a></li>
+            <li>空运预申报强制实施：<a href="https://aegypten.ahk.de/en/news2/egypt-to-enforce-mandatory-aci-for-air-freight-starting-january-1-2026">德阿商会 · 2026-01-01 起空运 ACI 强制</a>；<a href="https://cargox.io/advance-cargo-information-egypt">CargoX · 埃及 ACI 说明</a></li>
+            <li>消费者退货与保修：<a href="https://www.africa-laws.org/Egypt/Consumer%20Law/Law%20No.%20181%20of%202018%20on%20Consumer%20Protection.pdf">消费者保护法 181/2018 全文</a>；<a href="https://cpa.gov.eg/en-us/About-CPA">埃及消费者保护局</a></li>
+            <li>零售业态与商务条件：<a href="https://eg.andersen.com/franchising-in-egypt/">Andersen · 埃及特许经营法律指引</a>；<a href="https://businessmonthlyeg.com/discovering-egypts-franchise-market-opportunities-and-trends/">Business Monthly · 埃及特许市场结构</a>；<a href="https://www.trade.gov/country-commercial-guides/egypt-distribution-sales-channels">US ITA · 埃及分销与销售渠道</a></li>
+            <li>零售趋势：<a href="https://www.tawasolfranchising.com/news/egypt-retail-market-2026">Egypt Retail Market 2026</a>；<a href="https://www.dailynewsegypt.com/2026/04/28/egypt-launches-menas-largest-ai-powered-quick-commerce-fulfilment-hub-for-talabat/">Daily News Egypt · MENA 最大即时零售履约中心（2026-04）</a>；<a href="https://egyptianstreets.com/2026/07/08/local-brands-storm-egypts-retail-scene/">Egyptian Streets · 本土品牌崛起（2026-07）</a></li>
+            <li>消费者与客流（第四章）：<a href="https://www.pwc.com/m1/en/publications/voice-of-the-consumer-2024-survey-egypt-findings.html">PwC · Voice of the Consumer 2024 埃及发现（样本 320）</a>；<a href="https://www.jll.com/en-us/insights/market-dynamics/cairo-retail">JLL · 开罗零售市场 2026 年二季度</a>；<a href="https://www.nbe.com.eg/AssetsManager/300fe560-eaa0-4a6d-b180-d7b1928b43fa.pdf">埃及国家银行 · 汽车行业资料（中国品牌乘用车销量，第 30 页）</a></li>
+            <li>价格参照（展示价，2026-09）：<a href="https://aldoshoes.com.eg/collections/handbags">ALDO 埃及</a>；<a href="https://www.lcwaikiki.eg/en/bags-wallets-u-300114">LC Waikiki 埃及 · 包与钱包</a>；<a href="https://www.defacto.com.eg/en-eg/woman-bags">DeFacto 埃及 · 女包</a>；<a href="https://dejavu.shoes/">Dejavu</a>；<a href="https://hammerawl.com/">HammerAwl</a></li>
+            <li>货到付款与开包：<a href="https://docs.bosta.co/docs/plugins-and-sdks/integrate-with-shopify/">Bosta · 「允许客户开包」选项</a>；空运预申报官方口径：<a href="https://nafeza.gov.eg/en/pages/39">Nafeza · 空运 ACI 公告</a></li>
+            <li>租赁口径冲突说明：<a href="https://getoccupi.com/malls/mall-of-egypt-1">Occupi · Mall of Egypt（同页年租／月租口径不一致，未采用）</a>；<a href="https://aqarmap.com.eg/en/advice/investing-in-new-cairos-malls-a-deep-dive-into-rental-yields-and-property-value/">Aqarmap（750 埃镑为示意测算，未采用）</a></li>
+            <li>展会与行业组织：<a href="https://cairointerleather.com/">Cairo Inter Leather</a>；<a href="https://www.lecegypt.org/">埃及皮革出口委员会 LEC</a></li>
+            <li>北海岸季节性零售：<a href="https://enterpriseam.com/egypt/2026/08/12/egypts-north-coast-has-become-a-luxury-retail-battleground-is-it-actually-worth-it-for-the-brands/">EnterpriseAM · 北海岸奢侈零售是否划算（2026-08-12）</a></li>
+            <li>外地商场：<a href="https://www.majidalfuttaim.com/en/what-we-do/our-industries/brand/city-centre-alexandria">City Centre Alexandria</a>；<a href="https://www.marakez.net/">Marakez（Mall of Tanta / Mall of Mansoura）</a>；<a href="https://senzomall.com/">Senzo Mall 赫尔格达</a></li>
+            <li>中资产能：<a href="https://en.setc-zone.com/">中埃泰达苏伊士经贸合作区</a>；<a href="https://sourcingjournal.com/topics/sourcing/chinese-textile-companies-new-garment-factories-egypt-suez-canal-indochine-holdings-461734/">Sourcing Journal · Chinese Textile Players in Egypt</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        <span>开罗箱包入场简报 · 资料核实 2026-09-09</span>
+        <span>标「⚑」各项须现场确认：税费问清关行，价格与偏好问渠道和顾客</span>
+      </footer>
+
+    </main>
+
+    <nav class="toc" aria-label="章节目录">
+      <h2>目录</h2>
+      <ol>
+        <li><a href="#s0"><span>00</span>摘要九条</a></li>
+        <li><a href="#s1"><span>01</span>钱：落地成本</a></li>
+        <li><a href="#s2"><span>02</span>入场券四道门</a></li>
+        <li><a href="#s3"><span>03</span>你在跟谁打</a></li>
+        <li><a href="#s4"><span>04</span>客流、场景与中国货</a></li>
+        <li><a href="#s5"><span>05</span>渠道、业态与地图</a></li>
+        <li><a href="#s6"><span>06</span>三条线判断</a></li>
+        <li><a href="#s7"><span>07</span>第三条路</a></li>
+        <li><a href="#s8"><span>08</span>客户、渠道与经营条件</a></li>
+        <li><a href="#s9"><span>附</span>核实清单</a></li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<details class="mnav" id="mnav">
+  <summary><span class="cur">当前<b>摘要九条</b></span><span class="tag">目录</span></summary>
+  <ol>
+    <li><a href="#s0"><span>00</span>摘要九条</a></li>
+    <li><a href="#s1"><span>01</span>钱：落地成本</a></li>
+    <li><a href="#s2"><span>02</span>入场券四道门</a></li>
+    <li><a href="#s3"><span>03</span>你在跟谁打</a></li>
+    <li><a href="#s4"><span>04</span>客流、场景与中国货</a></li>
+    <li><a href="#s5"><span>05</span>渠道、业态与地图</a></li>
+    <li><a href="#s6"><span>06</span>三条线判断</a></li>
+    <li><a href="#s7"><span>07</span>第三条路</a></li>
+    <li><a href="#s8"><span>08</span>客户、渠道与经营条件</a></li>
+    <li><a href="#s9"><span>附</span>核实清单</a></li>
+  </ol>
+</details>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var DEFAULTS = { fob:5, frt:0.45, duty:30, dev:3, vat:14, imp:35, ret:100, fx:51 };
+  var IDS = Object.keys(DEFAULTS);
+  var splitMode = true;
+
+  var SEGS = [
+    { key:"fob",  label:"FOB 离岸",     cls:"seg-f1", grp:"f" },
+    { key:"frt",  label:"海运保险",     cls:"seg-f2", grp:"f" },
+    { key:"duty", label:"关税",         cls:"seg-t1", grp:"t" },
+    { key:"dev",  label:"发展费",       cls:"seg-t2", grp:"t" },
+    { key:"vat",  label:"增值税 14%",   cls:"seg-t3", grp:"t" },
+    { key:"imp",  label:"进口商加价",   cls:"seg-c1", grp:"c" },
+    { key:"ret",  label:"零售商加价",   cls:"seg-c2", grp:"c" }
+  ];
+  var GRP_LABEL = { f:"你的成本", t:"税费", c:"渠道加价" };
+
+  function num(id){
+    var v = parseFloat($(id).value);
+    return (isFinite(v) && v >= 0) ? v : 0;
+  }
+
+  function compute(dutyRate){
+    var fob = num("fob"), frt = num("frt");
+    var dev = num("dev")/100, vat = num("vat")/100;
+    var imp = num("imp")/100, ret = num("ret")/100;
+    var cif   = fob + frt;
+    var duty  = cif * (dutyRate/100);
+    var devF  = cif * dev;
+    var vatF  = (cif + duty + devF) * vat;
+    var landed = cif + duty + devF + vatF;
+    var impPrice = landed * (1 + imp);
+    var impM = impPrice - landed;
+    var shelf = impPrice * (1 + ret);
+    var retM = shelf - impPrice;
+    return {
+      cif:cif, landed:landed, shelf:shelf,
+      mult: fob > 0 ? shelf/fob : 0,
+      parts:{ fob:fob, frt:frt, duty:duty, dev:devF, vat:vatF, imp:impM, ret:retM }
+    };
+  }
+
+  function money(v){ return "$" + v.toFixed(2); }
+  function egp(v, fx){ return Math.round(v*fx).toLocaleString("en-US") + " EGP"; }
+
+  function paintBar(barEl, brkEl, res){
+    var total = res.shelf || 1;
+    barEl.innerHTML = "";
+    SEGS.forEach(function(s){
+      var pct = (res.parts[s.key]/total)*100;
+      var d = document.createElement("div");
+      d.className = "seg " + s.cls;
+      d.style.width = pct.toFixed(3) + "%";
+      d.setAttribute("title", s.label + " · " + money(res.parts[s.key]) + " · " + pct.toFixed(1) + "%");
+      barEl.appendChild(d);
+    });
+    // group brackets act as the direct labels for the three identities
+    var groups = [["f",0],["t",0],["c",0]];
+    SEGS.forEach(function(s){
+      for(var i=0;i<groups.length;i++){ if(groups[i][0]===s.grp) groups[i][1] += res.parts[s.key]; }
+    });
+    brkEl.innerHTML = "";
+    groups.forEach(function(g){
+      var pct = (g[1]/total)*100;
+      var d = document.createElement("div");
+      d.className = "brk g-" + g[0];
+      d.style.width = pct.toFixed(3) + "%";
+      var sp = document.createElement("span");
+      sp.textContent = pct >= 9 ? (GRP_LABEL[g[0]] + " " + Math.round(pct) + "%") : (Math.round(pct) + "%");
+      d.appendChild(sp);
+      brkEl.appendChild(d);
+    });
+  }
+
+  function render(){
+    var fx = num("fx") || 1;
+    var cn = compute(num("duty"));
+    var tr = compute(0);
+
+    $("oCif").textContent    = money(cn.cif);
+    $("oCifE").textContent   = egp(cn.cif, fx);
+    $("oLanded").textContent = money(cn.landed);
+    $("oLandedE").textContent= egp(cn.landed, fx);
+    $("oShelf").textContent  = money(cn.shelf);
+    $("oShelfE").textContent = egp(cn.shelf, fx);
+    $("oMult").textContent   = cn.mult.toFixed(1) + "×";
+    var gap = cn.shelf - tr.shelf;
+    $("oGap").textContent = splitMode
+      ? "比土耳其货贵 " + money(gap) + " / " + egp(gap, fx)
+      : "货架价是出厂价的 " + cn.mult.toFixed(1) + " 倍";
+
+    $("capCN").textContent = "货架价 " + money(cn.shelf) + " · " + egp(cn.shelf, fx);
+    $("capTR").textContent = "货架价 " + money(tr.shelf) + " · " + egp(tr.shelf, fx);
+
+    paintBar($("barCN"), $("brkCN"), cn);
+    paintBar($("barTR"), $("brkTR"), tr);
+
+    $("blkTR").style.display = splitMode ? "" : "none";
+
+    var pct = function(part, whole){
+      return whole > 0 ? ((part/whole)*100).toFixed(1) + "%" : "—";
+    };
+    var rows = "";
+    SEGS.forEach(function(s){
+      rows += "<tr><td><span class='chip'><i style='background:var(--c-" +
+        (s.grp==="f"?"fac":s.grp==="t"?"tax":"chan") + "-" +
+        (s.cls.slice(-1)) + ")'></i>" + s.label + "</span></td>" +
+        "<td class='num'>" + money(cn.parts[s.key]) + "</td>" +
+        "<td class='num'>" + pct(cn.parts[s.key], cn.shelf) + "</td>" +
+        "<td class='num'>" + money(tr.parts[s.key]) + "</td>" +
+        "<td class='num'>" + pct(tr.parts[s.key], tr.shelf) + "</td></tr>";
+    });
+    rows += "<tr class='total'><td>货架价合计</td><td class='num'>" + money(cn.shelf) +
+      "</td><td class='num'>100%</td><td class='num'>" + money(tr.shelf) + "</td><td class='num'>100%</td></tr>";
+    $("tbody").innerHTML = rows;
+  }
+
+  IDS.forEach(function(id){ $(id).addEventListener("input", render); });
+
+  $("reset").addEventListener("click", function(){
+    IDS.forEach(function(id){ $(id).value = DEFAULTS[id]; });
+    render();
+  });
+
+  function setMode(split){
+    splitMode = split;
+    $("mSplit").setAttribute("aria-pressed", String(split));
+    $("mOne").setAttribute("aria-pressed", String(!split));
+    render();
+  }
+  $("mSplit").addEventListener("click", function(){ setMode(true); });
+  $("mOne").addEventListener("click", function(){ setMode(false); });
+
+  render();
+
+  /* ---- checklist: per-viewer convenience only ---- */
+  var KEY = "cairo-bag-brief-checks";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e){ saved = {}; }
+  var boxes = document.querySelectorAll("#checklist input[type=checkbox], #productlist input[type=checkbox]");
+  Array.prototype.forEach.call(boxes, function(b){
+    var k = b.getAttribute("data-k");
+    if (saved[k]) b.checked = true;
+    b.addEventListener("change", function(){
+      saved[k] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){ /* private mode */ }
+    });
+  });
+
+  /* ---- TOC active state ---- */
+  var links = document.querySelectorAll(".toc a");
+  var mnav = $("mnav");
+  var mlinks = mnav ? mnav.querySelectorAll("a") : [];
+  var mcur = mnav ? mnav.querySelector(".cur b") : null;
+  Array.prototype.forEach.call(mlinks, function(a){
+    a.addEventListener("click", function(){ mnav.open = false; });
+  });
+  var secs = Array.prototype.map.call(links, function(a){
+    return document.querySelector(a.getAttribute("href"));
+  });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var i = secs.indexOf(en.target);
+        if (i < 0) return;
+        Array.prototype.forEach.call(links, function(a){ a.classList.remove("on"); });
+        links[i].classList.add("on");
+        Array.prototype.forEach.call(mlinks, function(a){ a.classList.remove("on"); });
+        if (mlinks[i]) {
+          mlinks[i].classList.add("on");
+          if (mcur) mcur.textContent = mlinks[i].lastChild.nodeValue;
+        }
+      });
+    }, { rootMargin: "-10% 0px -75% 0px" });
+    secs.forEach(function(s){ if (s) io.observe(s); });
+  }
+})();
+</script>
+
+<script>
+/* ===================== 大开罗商圈地图 ===================== */
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  if (!$("mapbox")) return;
+
+  /* ---- 分类 ---- */
+  var CATS = {
+    mall : { label:"高端商场",     mk:"mk-mall",   pin:"c-mall"   },
+    mall2: { label:"中端商场与连锁", mk:"mk-mall",   pin:"c-mall2"  },
+    street:{ label:"街边商圈",     mk:"mk-street", pin:"c-street" },
+    whole: { label:"批发集散",     mk:"mk-whole",  pin:"c-whole"  },
+    indus: { label:"产业与制造",   mk:"mk-indus",  pin:"c-indus"  }
+  };
+  var CAT_ORDER = ["mall","mall2","street","whole","indus"];
+
+  /* ---- 地点数据（经纬度为实地近似值，用于方位判断） ---- */
+  var PLACES = [
+    /* —— 高端商场 —— */
+    { id:"cfc", brief:"东开罗高端旗舰，国际品牌的定价标尺", n:"开罗节日城", en:"Cairo Festival City Mall", cat:"mall", major:1,
+      lat:30.029, lon:31.408, area:"新开罗 New Cairo", cl:"east",
+      fact:"东开罗旗舰级商场，300+ 国际与区域品牌，餐饮区 81 家餐厅，20 厅影院（<b>面积说法不一：常见引用是 26.5 万 m²，但项目方公布的可租赁面积是 16 万 m²——总建面和可租面积不是一回事</b>）",
+      why:"东开罗的高端主场，也是国际品牌在埃及的定价天花板。<b>值得带样品来对标</b>：同类型的包，国际品牌在这里标多少埃镑、实际打几折成交，是高线定价必须先看清的参照。" },
+    { id:"moe", brief:"西开罗高端场，和节日城对照着看", n:"埃及购物中心", en:"Mall of Egypt", cat:"mall", major:1,
+      lat:29.972, lon:31.017, area:"十月六日城 6th October", cl:"west",
+      fact:"Majid Al Futtaim 旗下，含中东少见的室内滑雪场 Ski Egypt",
+      why:"西开罗高端主场，客群是十月六日城与谢赫扎耶德的富裕家庭。<b>和东边的节日城对照着看</b>——两个高端场的品牌结构有多少重叠，能看出埃及高端代理盘子的集中度。" },
+    { id:"stars", brief:"最老牌的大场，多档品牌同场", n:"星城", en:"Citystars Heliopolis", cat:"mall", major:1,
+      lat:30.073, lon:31.346, area:"纳斯尔城／黑里奥波利斯", cl:"core",
+      fact:"750+ 店铺（商场官网口径）；从 Cartier、Swarovski 到 H&M、M&S、Mango（<b>面积怎么算的、是哪一年的，说法不一</b>）",
+      why:"开罗最老牌的大型商场，多档品牌同场经营，可以在一栋楼里看到较完整的价格层次。" },
+    { id:"arkan", brief:"西区开放式高端街区", n:"Arkan 广场", en:"Arkan Plaza", cat:"mall",
+      lat:30.043, lon:30.982, area:"谢赫扎耶德 Sheikh Zayed", cl:"west",
+      fact:"开放式高端生活方式中心，服务西区高收入住宅客群",
+      why:"西区开放式商业街区，含较高定位的零售与餐饮，是本土设计师品牌和精品店的落点之一。看<b>小体量高端店怎么陈列包</b>。" },
+    { id:"gem", brief:"看本土高端品牌怎么讲故事", n:"大埃及博物馆精品区", en:"Grand Egyptian Museum Retail", cat:"mall",
+      lat:29.993, lon:31.119, area:"吉萨 Giza", cl:"west",
+      fact:"本土高端箱包品牌 Okhtein 在此设有精品店",
+      why:"Okhtein 在此设精品店。看它怎么把本土工艺、设计和零售呈现结合成一个能卖高价的品牌——高线要正面回答的那个问题，这里有一个现成答案。" },
+
+    /* —— 中端商场与连锁 —— */
+    { id:"moa", brief:"西开罗大型商场，中端大众为主", n:"阿拉伯购物中心", en:"Mall of Arabia", cat:"mall2", major:1,
+      lat:30.013, lon:30.975, area:"十月六日城 6th October", cl:"west",
+      fact:"常被称为开罗体量最大的商场之一；<b>常说的「900+」出自 2015 年的报告，指的是品牌数不是在营店数，别当今天的门店数看</b>；Zara、H&M、Adidas 等",
+      why:"体量最大但定位偏中端大众，<b>这里的价格带比高端场更接近你的中线</b>。重点看快时尚品牌的配饰区——那是你中线最直接的竞品。" },
+    { id:"p90", brief:"新开罗中产家庭的日常场", n:"Point 90", en:"Point 90 Mall", cat:"mall2",
+      lat:30.0203, lon:31.4948, area:"新开罗 New Cairo（AUC 对面）", cl:"east",
+      fact:"新开罗中端主力场，餐饮与影院带客流",
+      why:"新开罗中产家庭的日常场。看<b>中端连锁的包在什么价位走量</b>。" },
+    { id:"dtk", brief:"开放式街区，新品牌开首店常见", n:"Downtown Katameya", en:"Downtown Mall Katameya", cat:"mall2",
+      lat:30.018, lon:31.434, area:"新开罗 New Cairo", cl:"east",
+      fact:"开放式街区型商业，年轻客群密集",
+      why:"开放式街区业态，租金结构和封闭商场不同，<b>新品牌开首店的常见落点</b>。" },
+    { id:"almaza", brief:"超市带客流的中端场", n:"Almaza City Centre", en:"Almaza City Centre", cat:"mall2",
+      lat:30.088, lon:31.376, area:"黑里奥波利斯 Heliopolis", cl:"core",
+      fact:"Majid Al Futtaim 系，家乐福主力店带客",
+      why:"超市带客流的中端场，<b>看快消式零售环境里包怎么陈列和定价</b>。" },
+    { id:"maadi", brief:"外籍与中产社区场，消费力偏高", n:"Maadi City Centre", en:"Maadi City Centre", cat:"mall2",
+      lat:29.959, lon:31.301, area:"马阿迪 Maadi", cl:"core",
+      fact:"家乐福主导的社区型商业中心",
+      why:"马阿迪是外籍与中产聚居区，<b>消费力高于开罗平均</b>，可作为中线定价的上沿参考。" },
+    { id:"genena", brief:"老场，价格更下沉", n:"Genena Mall", en:"Genena Mall", cat:"mall2",
+      lat:30.074, lon:31.332, area:"纳斯尔城 Nasr City", cl:"core",
+      fact:"纳斯尔城老牌中端商场，客群大众",
+      why:"老场、大众客群，<b>价格更下沉</b>。和隔壁星城对照看，一条街之隔就是两个消费层。" },
+    { id:"dandy", brief:"沙漠路上的过境客流场", n:"Dandy Mall", en:"Dandy Mega Mall", cat:"mall2",
+      lat:30.053, lon:31.008, area:"开罗-亚历山大沙漠路", cl:"west",
+      fact:"位于开罗通往亚历山大的沙漠路上，兼做过境客流",
+      why:"位置特殊，<b>吃的是过路与郊区客流</b>，业态更杂，可看非核心商圈的真实价格。" },
+    { id:"madinaty", brief:"新城型消费样本", n:"Madinaty 露天商场", en:"Open Air Mall Madinaty", cat:"mall2",
+      lat:30.103, lon:31.635, area:"Madinaty 新城", cl:"east",
+      fact:"大型新建住宅新城内的露天商业",
+      why:"看<b>新城型消费</b>——埃及新建卫星城的商业配套正在快速铺开，是未来几年的增量渠道。" },
+
+    /* —— 街边商圈 —— */
+    { id:"akkad", brief:"纳斯尔城大众零售主街", n:"阿巴斯·阿卡德街", en:"Abbas El Akkad St.", cat:"street", major:1,
+      lat:30.060, lon:31.336, area:"纳斯尔城 Nasr City", cl:"core",
+      fact:"纳斯尔城主商业街，服装店与国际连锁高度密集",
+      why:"纳斯尔城大众零售商业街。在这条街上能看到普通消费者面对的实际价格带，可与商场渠道比较。" },
+    { id:"dowal", brief:"老牌中产商业街，看品牌进退", n:"阿拉伯联盟街", en:"Gameat El Dowal El Arabeya", cat:"street", major:1,
+      lat:30.053, lon:31.202, area:"莫罕迪辛 Mohandessin", cl:"core",
+      fact:"老牌中产商业主街，品牌店与本地店混杂",
+      why:"莫罕迪辛老牌商业街，品牌店与本地店混杂。品牌进退要和历史门店记录对照——可以问店主哪些牌子撤了、哪些还在。" },
+    { id:"zamalek", brief:"本土设计师品牌的发源地", n:"26 July 街", en:"26th July Corridor, Zamalek", cat:"street",
+      lat:30.060, lon:31.220, area:"扎马雷克 Zamalek", cl:"core",
+      fact:"精品与设计师店聚集地；2011 年后成为新锐本土品牌的孵化区",
+      why:"<b>本土设计师品牌的发源地。</b>你要理解「埃及故事」怎么变成溢价，这里的小店比高端商场更能说明问题。" },
+    { id:"road9", brief:"高客单小众精品街", n:"九号街", en:"Road 9, Maadi", cat:"street",
+      lat:29.960, lon:31.257, area:"马阿迪 Maadi", cl:"core",
+      fact:"外籍与中产社区商业街，咖啡馆与精品店为主",
+      why:"客单价高、量小。看<b>高溢价小众零售</b>的可能性。" },
+    { id:"korba", brief:"老牌街区，客群稳定", n:"科尔巴", en:"Korba, Heliopolis", cat:"street",
+      lat:30.088, lon:31.326, area:"黑里奥波利斯 Heliopolis", cl:"core",
+      fact:"历史街区改造的中高端商业街",
+      why:"黑里奥波利斯老牌街区，客群相对稳定；不同款型的销售表现待核实。" },
+    { id:"talaat", brief:"批发到零售的过渡带", n:"塔拉特·哈布街", en:"Talaat Harb St., Downtown", cat:"street",
+      lat:30.046, lon:31.238, area:"市中心 Downtown", cl:"core",
+      fact:"老城核心商业街，紧邻阿塔巴批发区",
+      why:"介于批发与零售之间的过渡带，<b>看批发货怎么变成零售价</b>——从阿塔巴走过来只要十几分钟。" },
+
+    /* —— 批发集散 —— */
+    { id:"attaba", brief:"中国货集散地，价格战现场", n:"阿塔巴与穆斯基", en:"Attaba & Muski · العتبة والموسكي", cat:"whole", major:1,
+      lat:30.052, lon:31.247, area:"市中心 Downtown", cl:"core",
+      fact:"始于 1869 年，开罗最大批发集散区；Al-Mouski 街主营布料纺织，Abdel Aziz 街主营电子，被当地人称作「埃及人经营的小中国」",
+      why:"<b>低线要不要做，在这儿看半小时比读报告直接</b>——看到的是战场长什么样，不是结论。" },
+    { id:"wekala", brief:"平价与二手服装，欧土货流通道", n:"Wekalet El Balah", en:"Wekalet El Balah · وكالة البلح", cat:"whole",
+      lat:30.058, lon:31.230, area:"布拉克 Bulaq", cl:"core",
+      fact:"平价服装集散地，<b>大量二手服装来自欧洲与土耳其</b>",
+      why:"看埃及消费的最底层。<b>特别注意二手货的来源是欧洲和土耳其</b>——这说明土耳其的货流通道有多顺，不只是新品在竞争。" },
+    { id:"khan", brief:"传统手工皮具作坊区", n:"汗·哈利利", en:"Khan el-Khalili · خان الخليلي", cat:"whole",
+      lat:30.048, lon:31.262, area:"老开罗 Islamic Cairo", cl:"core",
+      fact:"传统市集，手工皮具与工艺品作坊集中",
+      why:"看<b>埃及传统手工皮具</b>的真实工艺水平和用料——Okhtein 的黄铜工艺就出自这一带的匠人体系。" },
+
+    /* —— 产业与制造 —— */
+    { id:"robbiki", brief:"国家级皮革城，本地产能的核心", n:"罗比基皮革城", en:"Robbiki Leather City · مدينة الروبيكي للجلود", cat:"indus", major:1,
+      lat:30.150, lon:31.720, area:"巴德尔城 Badr", cl:"east",
+      fact:"距开罗约 54 km、距巴德尔城 5 km、距苏伊士港 100 km；已迁入 195 家制革厂、约 150 家中小企业，规划年产 1.5 亿平方英尺；三期目标转向箱包、鞋、配件等成品",
+      why:"<b>如果考虑第七章那条路，这一站绕不开。</b>进一次车间就能看出本地水平、缺什么、成本大概在哪。重点问：五金、里料、模具、版型、设备从哪来，哪些必须进口。" },
+    { id:"tenth", brief:"老牌工业城，本地成品厂集中", n:"斋月十日城", en:"10th of Ramadan City", cat:"indus",
+      lat:30.296, lon:31.742, area:"开罗东北工业带", cl:"east",
+      fact:"埃及老牌综合性工业城，纺织服装与轻工产能集中",
+      why:"成熟工业配套区，<b>本地成品箱包厂多在这一带</b>，是你低线最直接的对手。" },
+    { id:"oct6i", brief:"开罗西部工业带", n:"十月六日城工业区", en:"6th of October Industrial Zone", cat:"indus",
+      lat:29.950, lon:30.920, area:"开罗西部工业带", cl:"west",
+      fact:"西部主要工业聚集区，距埃及购物中心车程约 20 分钟",
+      why:"与十月六日城的零售项目在同一片区域，本地成品厂和配套集中在这一带。" },
+    { id:"obour", brief:"东北轻工产业带", n:"奥布尔城", en:"Obour City", cat:"indus",
+      lat:30.228, lon:31.470, area:"开罗东北", cl:"east",
+      fact:"轻工与食品加工为主的工业新城",
+      why:"开罗东北部工业城，轻工配套集中。" },
+    /* —— 开罗以外（全埃及视图）：位置为城市级示意，非精确门址 —— */
+    { id:"ccalex", brief:"亚历山大最大的场，用来对照开罗", n:"City Centre Alexandria", en:"City Centre Alexandria", cat:"mall2", natl:1, major:1,
+      lat:31.185, lon:29.945, area:"亚历山大 Alexandria", cl:"far",
+      fact:"2003 年开业，Majid Al Futtaim 开发运营；<b>亚历山大体量最大的商场</b>，169 家店铺、可租赁面积约 6 万 m²，家乐福主力店约 1.48 万 m²，主力品牌含 Debenhams、Zara、Max、H&M，7 厅影院",
+      why:"<b>验证开罗的结论能不能推到第二座城市。</b>亚历山大是埃及第二大城市、有自己的消费习惯和港口，别默认开罗看到的东西在这里同样成立。这是最适合做对照的一个点。" },
+    { id:"sanstef", brief:"海滨高端综合体，含四季酒店", n:"San Stefano Grand Plaza", en:"San Stefano Grand Plaza", cat:"mall", natl:1,
+      lat:31.244, lon:29.966, area:"亚历山大 · 圣斯特凡诺", cl:"far",
+      fact:"2007 年开业，位于亚历山大海滨大道；四层零售，同一综合体含四季酒店、公寓、写字楼与游艇码头；本地品牌如 Dalydress、Mobaco 在此设点",
+      why:"海滨高端综合体，客群与开罗高端场不同。<b>顺便看本地中高端品牌（Mobaco 一类）怎么定价和陈列</b>——它们是你中高线在本地的对标对象。" },
+    { id:"greenplaza", brief:"亚历山大本地居民的日常场", n:"Green Plaza", en:"Green Plaza Mall", cat:"mall2", natl:1,
+      lat:31.205, lon:29.944, area:"亚历山大 · 西迪加比尔", cl:"far",
+      fact:"开放式商业中心，商户数量多，长期是亚历山大本地客流的主力场之一",
+      why:"补充亚历山大的<b>本地居民日常消费样本</b>，避免只看海滨高端项目就下结论。" },
+    { id:"tanta", brief:"三角洲第一个国际标准商场", n:"Mall of Tanta", en:"Mall of Tanta", cat:"mall2", natl:1, major:1,
+      lat:30.787, lon:30.999, area:"坦塔 Tanta（三角洲）", cl:"far",
+      fact:"2019 年开业，Marakez 开发；逾 13.5 万 m²、140+ 店铺，含大型超市与多厅影院。<b>被称为埃及次级省份中第一个国际标准商场</b>",
+      why:"<b>三角洲区域城市的样本。</b>埃及一半以上人口不住在开罗和亚历山大。如果你的客户覆盖全国，这类区域城市的价格带和渠道结构，比再看一个开罗商场更有信息量。" },
+    { id:"mansoura", brief:"三角洲第二场，营业状态待确认", n:"Mall of Mansoura", en:"Mall of Mansoura", cat:"mall2", natl:1,
+      lat:31.041, lon:31.379, area:"曼苏拉 Mansoura（三角洲）", cl:"far",
+      fact:"Marakez 在三角洲的第二个项目，规划约 15.5 万 m²，开放式三广场布局，含大型超市、8 厅影院与餐饮娱乐（<b>当前营业与招商状态需现场确认</b>）",
+      why:"与坦塔对照，看三角洲两座城市的消费差异。<b>去之前先确认营业状态</b>，别白跑。" },
+    { id:"marassi", brief:"北海岸季节性高端，Okhtein 在此", n:"Marassi MPorium", en:"Marassi MPorium, North Coast", cat:"mall", natl:1,
+      lat:30.942, lon:28.748, area:"北海岸 · 西迪阿卜杜勒拉赫曼", cl:"far",
+      fact:"Emaar Misr 的 Marassi 度假社区内高端商业区。北海岸近年成为奢侈品牌的季节性战场，进驻者含 Azza Fahmy、<b>Okhtein</b>、Beymen、Zegna 等",
+      why:"<b>这是埃及最特殊、也最容易被外来者误判的一个渠道。</b>只旺三四个月，但客群是全埃及购买力最高的一批人。<b>你的高线对手 Okhtein 已经在这里开店了</b>——去看它怎么在一个季节性市场做品牌。" },
+    { id:"senzo", brief:"红海最大，游客消费样本", n:"Senzo Mall", en:"Senzo Mall, Hurghada", cat:"mall2", natl:1,
+      lat:27.228, lon:33.813, area:"赫尔格达 Hurghada（红海）", cl:"far",
+      fact:"2009 年开业，占地约 17 万 m²，红海地区最大的零售娱乐目的地；主力店 Spinneys 超市约 8,000 m²，品牌含 Adidas、LC Waikiki、DeFacto、Mango、Aldo，另设免税店与纪念品市集。靠近赫尔格达机场与酒店区",
+      why:"<b>旅游消费样本。</b>要点是<b>把常住居民、旅游从业者和游客的购买分开看</b>——游客买的是纪念品和应急品，不代表埃及人的日常选择。这个渠道对箱包（尤其行李箱、沙滩包）有独立逻辑。" },
+    { id:"soho", brief:"沙姆沙伊赫的旅游零售区", n:"SOHO Square", en:"SOHO Square, Sharm El Sheikh", cat:"mall2", natl:1,
+      lat:27.913, lon:34.332, area:"沙姆沙伊赫 Sharm El Sheikh", cl:"far",
+      fact:"沙姆沙伊赫主要的购物、餐饮与娱乐集中区，零售店与集市并存",
+      why:"红海另一端的旅游零售样本，与赫尔格达对照。<b>礼赠与随身应急品类在这里的表现，和城市市场完全不同。</b>" },
+
+    { id:"teda", brief:"中资产业园，了解投资条件", n:"中埃泰达苏伊士经贸合作区", en:"TEDA Suez Zone, Ain Sokhna", cat:"indus", major:1, natl:1,
+      lat:29.660, lon:32.340, area:"艾因苏赫纳 Ain Sokhna", cl:"far",
+      fact:"中方累计投资约 40 亿美元，园区企业近 200 家、约 1 万个就业岗位；三期已启动并纳入纺织与化纤",
+      why:"中资产业园，可了解园区配套与投资条件；中文沟通方便。距开罗约 130 km。" }
+  ];
+
+  /* ---- 三条动线 ---- */
+  var ROUTES = [
+    { id:"core", n:"中线 · 市区", sub:"批发 + 街边 + 老牌商场",
+      d:"阿塔巴批发区、塔拉特·哈布街、纳斯尔城的阿巴斯·阿卡德街和星城，集中在老城到纳斯尔城这一片。<b>这一片有从批发到高端的多档价格与渠道样本。</b>" },
+    { id:"west", n:"西线 · 十月六日城", sub:"高端场 + 最大商场 + 工业区",
+      d:"埃及购物中心、阿拉伯购物中心、Arkan、大埃及博物馆精品区和十月六日城工业区，都在西部这一片。<b>这一片同时有高端零售和本地产能。</b>" },
+    { id:"east", n:"东线 · 新开罗与罗比基", sub:"高端场 + 皮革城",
+      d:"节日城、Point 90 在新开罗，罗比基皮革城在更东边的巴德尔城。覆盖新开罗以及更东部的产业点；皮革城需要提前联系对接人。" }
+  ];
+
+  /* ---- 地理要素（经纬度折线，投影后绘制） ---- */
+  var NILE = [[29.55,31.22],[29.72,31.25],[29.84,31.26],[29.92,31.243],[29.99,31.229],
+              [30.05,31.226],[30.10,31.219],[30.14,31.180],[30.18,31.135]];
+  var ROSETTA = [[30.18,31.135],[30.42,31.00],[30.62,30.85],[30.88,30.62],[31.15,30.44],[31.40,30.37]];
+  var DAMIETTA= [[30.18,31.135],[30.42,31.26],[30.66,31.41],[30.92,31.56],[31.16,31.71],[31.42,31.82]];
+  var COAST   = [[31.02,27.30],[31.12,28.50],[31.20,29.85],[31.31,30.35],[31.44,30.62],
+                 [31.40,31.05],[31.52,31.35],[31.44,31.75],[31.30,32.10],[31.26,32.32]];
+  var SUEZ    = [[31.26,32.32],[30.95,32.35],[30.58,32.32],[30.20,32.55],[29.95,32.56],
+                 [29.60,32.42],[29.15,32.72],[28.60,33.15],[28.10,33.38],[27.40,33.68]];
+  var RING    = [[30.16,31.20],[30.14,31.32],[30.09,31.40],[30.02,31.42],[29.955,31.36],
+                 [29.925,31.28],[29.95,31.20],[30.02,31.155],[30.09,31.16],[30.16,31.20]];
+  var AX_W    = [[30.03,31.15],[30.00,31.05],[29.98,30.96]];
+  var AX_E    = [[30.06,31.42],[30.11,31.55],[30.15,31.72]];
+  var AX_NE   = [[30.10,31.40],[30.20,31.55],[30.29,31.74]];
+  var AX_SE   = [[30.00,31.45],[29.85,31.85],[29.66,32.34]];
+  var URBAN = [
+    {lat:30.05, lon:31.255, rx:0.115, ry:0.105},
+    {lat:29.99, lon:30.965, rx:0.080, ry:0.062},
+    {lat:30.025,lon:31.435, rx:0.070, ry:0.052},
+    {lat:30.145,lon:31.715, rx:0.048, ry:0.036},
+    {lat:30.292,lon:31.742, rx:0.050, ry:0.038},
+    {lat:30.226,lon:31.470, rx:0.040, ry:0.030},
+    {lat:30.103,lon:31.635, rx:0.038, ry:0.028}
+  ];
+
+  /* ---- 投影：等距圆柱，按纬度做经度压缩；两套取景范围可切换 ---- */
+  var VB_W = 1000, VB_H = 560;
+  var VIEWS = {
+    cairo: { label:"大开罗", lat0:30.42, lat1:29.52, lon0:30.83, lon1:32.47 },
+    egypt: { label:"全埃及", lat0:31.75, lat1:26.90, lon0:28.30, lon1:34.60 }
+  };
+  var view = "cairo";
+  var B, COSLAT, KM_LAT = 110.9, KM_LON, PPK, padX, padY;
+
+  function setProjection(name){
+    view = name;
+    B = VIEWS[name];
+    COSLAT = Math.cos((B.lat0 + B.lat1) / 2 * Math.PI / 180);
+    KM_LON = 111.32 * COSLAT;
+    var sx = (B.lon1 - B.lon0) * KM_LON, sy = (B.lat0 - B.lat1) * KM_LAT;
+    PPK = Math.min(VB_W / sx, VB_H / sy);
+    padX = (VB_W - sx * PPK) / 2;
+    padY = (VB_H - sy * PPK) / 2;
+  }
+  setProjection("cairo");
+
+  function px(lon){ return padX + (lon - B.lon0) * KM_LON * PPK; }
+  function py(lat){ return padY + (B.lat0 - lat) * KM_LAT * PPK; }
+  function kmBetween(a, b){
+    /* 距离用固定尺度算，与当前取景无关 */
+    var cl = Math.cos((a.lat + b.lat) / 2 * Math.PI / 180);
+    var dx = (a.lon - b.lon) * 111.32 * cl, dy = (a.lat - b.lat) * KM_LAT;
+    return Math.sqrt(dx*dx + dy*dy);
+  }
+  function path(pts){
+    return pts.map(function(p, i){ return (i ? "L" : "M") + px(p[1]).toFixed(1) + " " + py(p[0]).toFixed(1); }).join(" ");
+  }
+
+  /* ---- 绘制地理层 ---- */
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs){
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+  function drawGeo(){
+    var g = $("geo");
+    g.innerHTML = "";
+    if (view === "cairo") URBAN.forEach(function(u){
+      g.appendChild(el("ellipse", { cx:px(u.lon), cy:py(u.lat),
+        rx:u.rx * KM_LON * PPK, ry:u.ry * KM_LAT * PPK, class:"geo-urban" }));
+    });
+    var roads = (view === "cairo") ? [AX_W, AX_E, AX_NE, AX_SE] : [];
+    roads.forEach(function(a){
+      g.appendChild(el("path", { d:path(a), class:"geo-road", "stroke-width":"3", "stroke-dasharray":"7 5" }));
+    });
+    if (view === "cairo")
+      g.appendChild(el("path", { d:path(RING), class:"geo-road", "stroke-width":"2.5" }));
+    var w = (view === "cairo")
+      ? [[NILE,7],[ROSETTA,4.5],[DAMIETTA,4.5],[COAST,3],[SUEZ,3]]
+      : [[NILE,3.5],[ROSETTA,2.5],[DAMIETTA,2.5],[COAST,2.5],[SUEZ,2.5]];
+    w.forEach(function(p){
+      g.appendChild(el("path", { d:path(p[0]), class:"geo-water", "stroke-width":p[1] }));
+    });
+  }
+
+  /* ---- 交互状态 ---- */
+  var k = 1, tx = 0, ty = 0, sel = null, active = {}, routeSel = null;
+  CAT_ORDER.forEach(function(c){ active[c] = true; });
+  var box = $("mapbox"), geo = $("geo"), pinsEl = $("pins");
+
+  /* SVG 以 preserveAspectRatio="meet" 缩放，标记必须用同一套缩放与留白，
+     否则容器高宽比一变就会整体错位 */
+  function metrics(){
+    var w = box.clientWidth, h = box.clientHeight;
+    var s = Math.min(w / VB_W, h / VB_H);
+    return { s:s, offX:(w - VB_W * s) / 2, offY:(h - VB_H * s) / 2 };
+  }
+  function pxPerUnit(){ return metrics().s; }
+
+  function apply(){
+    geo.setAttribute("transform", "translate(" + tx + " " + ty + ") scale(" + k + ")");
+    var m = metrics();
+
+    /* 先定位，并缓存标签尺寸（只量一次） */
+    var cands = [];
+    PLACES.forEach(function(p){
+      if (!p._el) return;
+      var X = m.offX + (p._x * k + tx) * m.s;
+      var Y = m.offY + (p._y * k + ty) * m.s;
+      p._el.style.left = X + "px";
+      p._el.style.top  = Y + "px";
+      if (p._el.style.display === "none") return;
+      if (p._tw == null){
+        p._el.classList.remove("hide-tag");
+        var t = p._el.querySelector(".tag");
+        p._tw = t.offsetWidth; p._th = t.offsetHeight;
+      }
+      /* 优先级：选中 > 重点 > 其余；缩放越大放出越多 */
+      var pri = (sel === p.id) ? 0 : (p.major ? 1 : 2);
+      if (pri === 2 && k < 1.45) { p._el.classList.add("hide-tag"); return; }
+      cands.push({ p:p, pri:pri, X:X, Y:Y });
+    });
+
+    /* 贪心避让：按优先级放置，与已放置标签相交的直接隐藏 */
+    cands.sort(function(a, b){ return a.pri - b.pri || a.Y - b.Y; });
+    var placed = [];
+    cands.forEach(function(c){
+      var w = c.p._tw || 60, h = c.p._th || 14, PAD = 3;
+      var r = { l:c.X - w/2 - PAD, r:c.X + w/2 + PAD, t:c.Y + 12, b:c.Y + 12 + h + PAD };
+      var hit = placed.some(function(q){
+        return r.l < q.r && q.l < r.r && r.t < q.b && q.t < r.b;
+      });
+      if (hit && c.pri !== 0){ c.p._el.classList.add("hide-tag"); }
+      else { c.p._el.classList.remove("hide-tag"); placed.push(r); }
+    });
+
+    /* 比例尺：取最接近 80 绘图单位的整数公里 */
+    var kmFor80 = 80 / (PPK * k);
+    var nice = [1,2,5,10,20,25,50,100,200].reduce(function(a,b){
+      return Math.abs(b - kmFor80) < Math.abs(a - kmFor80) ? b : a;
+    });
+    $("scaleRule").style.width = (nice * PPK * k * m.s) + "px";
+    $("scaleTxt").textContent = nice + " km";
+  }
+
+  function clamp(){
+    k = Math.max(0.75, Math.min(9, k));
+    var maxOff = VB_W * (k - 1);
+    tx = Math.min(VB_W * 0.35, Math.max(-maxOff - VB_W * 0.35, tx));
+    ty = Math.min(VB_H * 0.35, Math.max(-VB_H * (k - 1) - VB_H * 0.35, ty));
+  }
+
+  /* ---- 建标记 ---- */
+  PLACES.forEach(function(p){
+    p._x = px(p.lon); p._y = py(p.lat);
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "pin " + CATS[p.cat].pin;
+    b.setAttribute("aria-label", p.n + "（" + CATS[p.cat].label + "，" + p.area + "）");
+    b.innerHTML = '<span class="dot"></span><span class="tag"></span>';
+    b.querySelector(".tag").textContent = p.n;
+    b.addEventListener("click", function(e){ e.stopPropagation(); select(p.id); });
+    pinsEl.appendChild(b);
+    p._el = b;
+  });
+
+  /* ---- 分类筛选按钮 ---- */
+  CAT_ORDER.forEach(function(c){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip-btn"; b.setAttribute("aria-pressed", "true");
+    b.innerHTML = '<span class="mk ' + CATS[c].mk + '"></span>' + CATS[c].label;
+    b.addEventListener("click", function(){
+      active[c] = !active[c];
+      b.setAttribute("aria-pressed", String(active[c]));
+      refresh();
+    });
+    $("chips").appendChild(b);
+  });
+
+  /* ---- 名录 ---- */
+  (function buildDir(){
+    var wrap = $("dirList");
+    CAT_ORDER.forEach(function(c){
+      var grp = document.createElement("div");
+      grp.className = "dir-group";
+      grp.setAttribute("data-cat", c);
+      var h = document.createElement("div");
+      h.className = "dir-h";
+      h.innerHTML = '<span class="mk ' + CATS[c].mk + '"></span>' + CATS[c].label;
+      grp.appendChild(h);
+      wrap.appendChild(grp);
+      PLACES.filter(function(p){ return p.cat === c; }).forEach(function(p){
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "dir-item"; b.setAttribute("data-id", p.id);
+        b.innerHTML = '<div class="nm"></div><div class="brief"></div><div class="meta"><span class="a"></span><span class="d"></span></div>';
+        b.querySelector(".nm").textContent = p.n;
+        b.querySelector(".brief").textContent = p.brief || "";
+        b.querySelector(".a").textContent = p.area;
+        b.addEventListener("click", function(){ select(p.id, true); });
+        grp.appendChild(b);
+        p._dir = b;
+      });
+    });
+  })();
+
+  /* ---- 距离基准：阿塔巴（老城中心） ---- */
+  var ORIGIN = PLACES.filter(function(p){ return p.id === "attaba"; })[0];
+  PLACES.forEach(function(p){
+    p._km = Math.round(kmBetween(p, ORIGIN));
+    if (p._dir) p._dir.querySelector(".d").textContent = p.id === "attaba" ? "市中心基准" : ("距市中心 " + p._km + " km");
+  });
+
+  /* ---- 动线卡片 ---- */
+  (function buildRoutes(){
+    var wrap = $("routes");
+    ROUTES.forEach(function(r){
+      var stops = PLACES.filter(function(p){ return p.cl === r.id; });
+      var far = stops.reduce(function(a, p){ return Math.max(a, p._km); }, 0);
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "route"; b.setAttribute("data-route", r.id);
+      b.innerHTML =
+        '<div class="rh"><h4></h4><span class="km"></span></div>' +
+        '<p></p><div class="stops"></div>';
+      b.querySelector("h4").textContent = r.n;
+      b.querySelector(".km").textContent = "最远约 " + far + " km";
+      b.querySelector("p").innerHTML = r.d;
+      b.querySelector(".stops").textContent = stops.map(function(p){ return p.n; }).join(" · ");
+      b.addEventListener("click", function(){
+        routeSel = (routeSel === r.id) ? null : r.id;
+        refresh();
+      });
+      wrap.appendChild(b);
+    });
+  })();
+
+  /* ---- 详情卡 ---- */
+  function renderPlace(p){
+    if (!p){
+      $("place").innerHTML = '<p style="margin:0;font-size:.93rem;color:var(--ink-3)">' +
+        '点地图上的标记，或右侧名录里的任意一项，看它的定位与「去那儿看什么」。</p>';
+      return;
+    }
+    $("place").innerHTML =
+      '<div class="ph"><h4></h4><span class="en"></span></div>' +
+      '<div class="tags"><span class="tg cat"></span><span class="tg area"></span><span class="tg dist"></span></div>' +
+      '<dl><dt>基本情况</dt><dd class="f"></dd><dt>去那儿看什么</dt><dd class="w"></dd></dl>';
+    var q = function(s){ return $("place").querySelector(s); };
+    q("h4").textContent = p.n;
+    q(".en").textContent = p.en;
+    q(".cat").textContent = CATS[p.cat].label;
+    q(".cat").style.color = "var(--m-" +
+      (p.cat === "mall" || p.cat === "mall2" ? "mall" : p.cat === "street" ? "street" : p.cat === "whole" ? "whole" : "indus") + "-txt)";
+    q(".area").textContent = p.area;
+    q(".dist").textContent = p.id === "attaba" ? "市中心基准点" : ("距市中心约 " + p._km + " km");
+    q(".f").innerHTML = p.fact;
+    q(".w").innerHTML = p.why;
+  }
+
+  function select(id, fly){
+    sel = (sel === id) ? null : id;
+    if (sel && fly){
+      var p = PLACES.filter(function(x){ return x.id === sel; })[0];
+      k = Math.max(k, 2.2);
+      tx = VB_W / 2 - p._x * k;
+      ty = VB_H / 2 - p._y * k;
+      clamp();
+    }
+    refresh();
+  }
+
+  /* 某个点在当前取景里是否登场：大开罗视图只放开罗圈内的；
+     全埃及视图放外地点 + 开罗的重点，否则开罗那一坨会糊成一团 */
+  function inView(p){
+    return view === "cairo" ? !p.natl : (p.natl || p.major);
+  }
+
+  function refresh(){
+    var routeStops = routeSel
+      ? PLACES.filter(function(p){ return p.cl === routeSel; }).map(function(p){ return p.id; })
+      : null;
+    PLACES.forEach(function(p){
+      var on = active[p.cat] && inView(p);
+      var visible = on && (!routeStops || routeStops.indexOf(p.id) >= 0);
+      p._el.style.display = on ? "block" : "none";
+      p._el.classList.toggle("dim", !visible && on);
+      p._el.classList.toggle("on", sel === p.id);
+      if (p._dir){
+        p._dir.classList.toggle("hidden", !active[p.cat]);
+        p._dir.classList.toggle("on", sel === p.id);
+      }
+    });
+    document.querySelectorAll(".dir-group").forEach(function(g){
+      g.classList.toggle("hidden", !active[g.getAttribute("data-cat")]);
+    });
+    document.querySelectorAll(".route").forEach(function(b){
+      b.classList.toggle("on", routeSel === b.getAttribute("data-route"));
+    });
+    renderPlace(sel ? PLACES.filter(function(p){ return p.id === sel; })[0] : null);
+    apply();
+  }
+
+  /* ---- 平移 ---- */
+  var drag = null;
+  box.addEventListener("pointerdown", function(e){
+    if (e.target.closest(".mapctl")) return;
+    drag = { x:e.clientX, y:e.clientY, moved:0 };
+    box.classList.add("dragging");
+    box.setPointerCapture(e.pointerId);
+  });
+  box.addEventListener("pointermove", function(e){
+    if (!drag) return;
+    var s = pxPerUnit();
+    tx += (e.clientX - drag.x) / s;
+    ty += (e.clientY - drag.y) / s;
+    drag.moved += Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y);
+    drag.x = e.clientX; drag.y = e.clientY;
+    clamp(); apply();
+  });
+  function endDrag(){ drag = null; box.classList.remove("dragging"); }
+  box.addEventListener("pointerup", endDrag);
+  box.addEventListener("pointercancel", endDrag);
+
+  /* ---- 滚轮缩放（以指针为锚） ---- */
+  box.addEventListener("wheel", function(e){
+    e.preventDefault();
+    var m = metrics(), r = box.getBoundingClientRect();
+    var ux = (e.clientX - r.left - m.offX) / m.s, uy = (e.clientY - r.top - m.offY) / m.s;
+    var k0 = k;
+    k *= Math.exp(-e.deltaY * 0.0016);
+    clamp();
+    tx = ux - (ux - tx) * (k / k0);
+    ty = uy - (uy - ty) * (k / k0);
+    clamp(); apply();
+  }, { passive:false });
+
+  /* ---- 双指缩放 ---- */
+  var pts = {}, pinch = null;
+  box.addEventListener("pointerdown", function(e){ pts[e.pointerId] = e; });
+  box.addEventListener("pointermove", function(e){
+    if (!(e.pointerId in pts)) return;
+    pts[e.pointerId] = e;
+    var ids = Object.keys(pts);
+    if (ids.length !== 2) return;
+    drag = null;
+    var a = pts[ids[0]], b = pts[ids[1]];
+    var d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    var m = metrics(), r = box.getBoundingClientRect();
+    var cx = ((a.clientX + b.clientX) / 2 - r.left - m.offX) / m.s;
+    var cy = ((a.clientY + b.clientY) / 2 - r.top - m.offY) / m.s;
+    if (pinch){
+      var k0 = k;
+      k *= d / pinch.d; clamp();
+      tx = cx - (cx - tx) * (k / k0);
+      ty = cy - (cy - ty) * (k / k0);
+      clamp(); apply();
+    }
+    pinch = { d:d };
+  });
+  function dropPtr(e){ delete pts[e.pointerId]; if (Object.keys(pts).length < 2) pinch = null; }
+  box.addEventListener("pointerup", dropPtr);
+  box.addEventListener("pointercancel", dropPtr);
+
+  /* ---- 按钮与复位 ---- */
+  function zoomBy(f){
+    var k0 = k; k *= f; clamp();
+    tx = VB_W/2 - (VB_W/2 - tx) * (k / k0);
+    ty = VB_H/2 - (VB_H/2 - ty) * (k / k0);
+    clamp(); apply();
+  }
+  $("zIn").addEventListener("click", function(){ zoomBy(1.4); });
+  $("zOut").addEventListener("click", function(){ zoomBy(1/1.4); });
+  $("zRst").addEventListener("click", function(){
+    k = 1; tx = 0; ty = 0; sel = null; routeSel = null; refresh();
+  });
+
+  /* ---- 取景切换 ---- */
+  function switchView(name){
+    if (view === name) return;
+    setProjection(name);
+    drawGeo();
+    PLACES.forEach(function(p){ p._x = px(p.lon); p._y = py(p.lat); });
+    k = 1; tx = 0; ty = 0; sel = null; routeSel = null;
+    $("vCairo").setAttribute("aria-pressed", String(name === "cairo"));
+    $("vEgypt").setAttribute("aria-pressed", String(name === "egypt"));
+    /* 全埃及视图下按天分片没有意义，隐藏动线卡片 */
+    $("routes").style.display = (name === "cairo") ? "" : "none";
+    refresh();
+  }
+  $("vCairo").addEventListener("click", function(){ switchView("cairo"); });
+  $("vEgypt").addEventListener("click", function(){ switchView("egypt"); });
+
+  window.addEventListener("resize", apply);
+  drawGeo();
+  refresh();
+})();
+</script>
+
+<script>
+/* ===================== 试销投入与保本测算 ===================== */
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  if (!$("pSku")) return;
+
+  var D = { pSku:4, pQty:150, pCost:8.26, pPrice:11.16, pFixed:12000, pDead:30 };
+  var IDS = Object.keys(D);
+
+  function n(id){ var v = parseFloat($(id).value); return isFinite(v) && v >= 0 ? v : 0; }
+  function usd(v){
+    return "$" + Math.round(v).toLocaleString("en-US");
+  }
+
+  function render(){
+    var units = n("pSku") * n("pQty");
+    var cost  = n("pCost");
+    var price = n("pPrice");
+    var fixed = n("pFixed");
+    var sal   = n("pDead") / 100;          /* 滞销残值率 */
+
+    var stock  = units * cost;             /* 铺货占用 */
+    var margin = price - cost;             /* 单件毛利 */
+    /* 最坏情况：一件没卖出去，全部按残值处理掉，再加上一次性投入 */
+    var risk   = fixed + stock * (1 - sal);
+    /* 保本售罄率只算这一批货本身（一次性投入另计，它是买信息的钱，
+       第一批本来就不该指望收回）：
+       卖出比例 x 时  units*x*price + units*(1-x)*cost*sal = units*cost
+       → x = cost*(1-sal) / (price - cost*sal) */
+    var den = price - cost * sal;
+    var be  = (units > 0 && den > 0) ? (cost * (1 - sal)) / den : NaN;
+
+    var outlay = stock + fixed;            /* 实际要先付出去的钱 */
+    var best   = units * margin - fixed;   /* 全部卖光时的本轮收支 */
+
+    $("pUnits").textContent = units.toLocaleString("en-US") + " 只";
+    $("pStockNote").textContent = "货值 " + usd(stock) + " · 单件毛利 " + (margin >= 0 ? "$" : "-$") + Math.abs(margin).toFixed(2);
+    $("pOutlay").textContent = usd(outlay);
+    $("pOutlayNote").textContent = "铺货 " + usd(stock) + " ＋ 一次性投入 " + usd(fixed);
+    $("pRisk").textContent  = usd(risk);
+    $("pBest").textContent = (best >= 0 ? "+" : "−") + usd(Math.abs(best)).slice(1);
+    $("pBest").style.color = best >= 0 ? "var(--good)" : "var(--alert)";
+    $("pBestNote").textContent = best >= 0
+      ? "货品毛利已覆盖一次性投入"
+      : "满售也差 " + usd(-best) + " 才回本——这部分是买信息的钱";
+
+    $("pBE").style.color = "";
+    if (!isFinite(be) || units === 0){
+      $("pBE").textContent = "—"; $("pBENote").textContent = "请填入有效数值";
+    } else if (margin < 0){
+      $("pBE").textContent = "永不保本";
+      $("pBE").style.color = "var(--alert)";
+      $("pBENote").textContent = "出货价低于到岸成本，卖越多亏越多";
+    } else if (be <= 0){
+      $("pBE").textContent = "0%";
+      $("pBE").style.color = "var(--good)";
+      $("pBENote").textContent = "残值已覆盖一次性投入";
+    } else {
+      var pct = be * 100;
+      $("pBE").textContent = pct > 100 ? "＞100%" : pct.toFixed(0) + "%";
+      $("pBE").style.color = pct > 85 ? "var(--alert)" : "";
+      $("pBENote").textContent = pct > 100
+        ? "全卖光也回不了货款，出货价必须提"
+        : "要卖到这个比例，这批货的成本才收得回";
+    }
+  }
+
+  IDS.forEach(function(id){ $(id).addEventListener("input", render); });
+  $("pReset").addEventListener("click", function(){
+    IDS.forEach(function(id){ $(id).value = D[id]; });
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
